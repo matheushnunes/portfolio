@@ -28,18 +28,53 @@ export default function Principal () {
                         <p>HTML 5</p>
                     </div>
                     <div className="skill">
-                        <img src="/src/assets/images/logo_css.png" alt="logo html" />
+                        <img src="/src/assets/images/logo_css.png" alt="logo css" />
                         <p>CSS 3</p>
                     </div>
                     <div className="skill">
-                        <img src="/src/assets/images/logo_js.png" alt="logo html" />
+                        <img src="/src/assets/images/logo_js.png" alt="logo JavaSript" />
                         <p>JavaSript</p>
                     </div>
                     <div className="skill">
-                        <img src="/src/assets/images/logo_react.png" alt="logo html" />
+                        <img src="/src/assets/images/logo_git.png" alt="logo Git" />
+                        <p>Git</p>
+                    </div>
+                    <div className="skill">
+                        <img src="/src/assets/images/logo_gitHub.png" alt="logo GitHub" />
+                        <p>GitHub</p>
+                    </div>
+                    <div className="skill">
+                        <img src="/src/assets/images/logo_react.png" alt="logo React" />
                         <p>React</p>
                     </div>
+                    <div className="skill">
+                        <img src="/src/assets/images/logo_figma.png" alt="logo Figma" />
+                        <p>Figma</p>
+                    </div>
+                    <div className="skill">
+                        <img src="/src/assets/images/logo_node.png" alt="logo Node js" />
+                        <p>Node js</p>
+                    </div>
+                    <div className="skill">
+                        <img src="/src/assets/images/logo_scrum.png" alt="logo Scrum" />
+                        <p>Scrum</p>
+                    </div>
+                    <div className="skill">
+                        <img src="/src/assets/images/logo_python.png" alt="logo Python"/>
+                        <p>Python</p>
+                    </div>
+                    <div className="skill">
+                        <img src="/src/assets/images/logo_java.png" alt="logo Java" />
+                        <p>Java</p>
+                    </div>
+                    <div className="skill">
+                        <img src="/src/assets/images/logo_csharp.png" alt="logo C sharp"/>
+                        <p>C#</p>
+                    </div>
                 </div>
+            </section>
+            <section className="projects">
+
             </section>
         </main>
     )
