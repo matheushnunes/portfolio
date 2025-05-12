@@ -23,58 +23,129 @@ export default function Principal () {
             <section className="skills">
                 <h2>Habilidades</h2>
                 <div className="containerSkills">
-                    <div className="skill">
-                        <img src="/src/assets/images/logo_html.png" alt="logo html" />
-                        <p>HTML 5</p>
-                    </div>
-                    <div className="skill">
-                        <img src="/src/assets/images/logo_css.png" alt="logo css" />
-                        <p>CSS 3</p>
-                    </div>
-                    <div className="skill">
-                        <img src="/src/assets/images/logo_js.png" alt="logo JavaSript" />
-                        <p>JavaSript</p>
-                    </div>
-                    <div className="skill">
-                        <img src="/src/assets/images/logo_git.png" alt="logo Git" />
-                        <p>Git</p>
-                    </div>
-                    <div className="skill">
-                        <img src="/src/assets/images/logo_gitHub.png" alt="logo GitHub" />
-                        <p>GitHub</p>
-                    </div>
-                    <div className="skill">
-                        <img src="/src/assets/images/logo_react.png" alt="logo React" />
-                        <p>React</p>
-                    </div>
-                    <div className="skill">
-                        <img src="/src/assets/images/logo_figma.png" alt="logo Figma" />
-                        <p>Figma</p>
-                    </div>
-                    <div className="skill">
-                        <img src="/src/assets/images/logo_node.png" alt="logo Node js" />
-                        <p>Node js</p>
-                    </div>
-                    <div className="skill">
-                        <img src="/src/assets/images/logo_scrum.png" alt="logo Scrum" />
-                        <p>Scrum</p>
-                    </div>
-                    <div className="skill">
-                        <img src="/src/assets/images/logo_python.png" alt="logo Python"/>
-                        <p>Python</p>
-                    </div>
-                    <div className="skill">
-                        <img src="/src/assets/images/logo_java.png" alt="logo Java" />
-                        <p>Java</p>
-                    </div>
-                    <div className="skill">
-                        <img src="/src/assets/images/logo_csharp.png" alt="logo C sharp"/>
-                        <p>C#</p>
-                    </div>
+                    {[
+                        {
+                            img: "/src/assets/images/logo_html.png",
+                            alt: "logo html",
+                            label: "HTML 5"
+                        },
+                        {
+                            img: "/src/assets/images/logo_css.png",
+                            alt: "logo css",
+                            label: "CSS 3"
+                        },
+                        {
+                            img: "/src/assets/images/logo_js.png",
+                            alt: "logo JavaScript",
+                            label: "JavaScript"
+                        },
+                        {
+                            img: "/src/assets/images/logo_git.png",
+                            alt: "logo Git",
+                            label: "Git"
+                        },
+                        {
+                            img: "/src/assets/images/logo_gitHub.png",
+                            alt: "logo GitHub",
+                            label: "GitHub"
+                        },
+                        {
+                            img: "/src/assets/images/logo_react.png",
+                            alt: "logo React",
+                            label: "React"
+                        },
+                        {
+                            img: "/src/assets/images/logo_figma.png",
+                            alt: "logo Figma",
+                            label: "Figma"
+                        },
+                        {
+                            img: "/src/assets/images/logo_node.png",
+                            alt: "logo Node js",
+                            label: "Node js"
+                        }
+                    ].map((skill, idx) => (
+                        <div className="skill" key={idx}>
+                            <img src={skill.img} alt={skill.alt} />
+                            <p>{skill.label}</p>
+                        </div>
+                    ))}
                 </div>
             </section>
             <section className="projects">
-
+                <h2>Projetos</h2>
+                <div className="project">
+                    <h3>SGA Online</h3>
+                    <div className="container_project">
+                        <div className="container_img_project">
+                            <button className="btn see_more">
+                                Ver mais
+                            </button>
+                            <img src="../src/assets/images/dashboard_sga_online.png" alt="tela principal do SGA Online"/>
+                        </div>
+                        <div className="info_project">
+                            <p className="about_project">
+                                O SGA (Sistema de Gestão Automotivo) Online é um projeto acadêmico desenvolvido em equipe com mais cinco colegas. Nosso objetivo é criar uma versão moderna, web e responsiva de um sistema ERP desktop já utilizado por uma empresa do setor automotivo.
+                            </p>
+                            <div className="container_space_between">
+                                <button className="btn">
+                                    <a href="https://sga-web.github.io/SGA_ONLINE/Front_end/Principal/principal.html" target="_blank" rel="external">Acessar Projeto</a>
+                                </button>
+                                <button className="btn">
+                                    <a href="https://github.com/SGA-WEB/SGA_ONLINE" target="_blank" rel="external">Ver repositorio</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="project">
+                    <h3>Tabuada</h3>
+                    <div className="container_project">
+                        <div className="container_img_project">
+                            <button className="btn see_more">
+                                Ver mais
+                            </button>
+                            <img src="../src/assets/images/home_page_tabuada.png" alt="tela principal do SGA Online"/>
+                        </div>
+                        <div className="info_project">
+                            <p className="about_project">
+                                Um site onde é possível testar seus conhecimentos e aprender as tabuadas da matemática. Objeto principal para o desenvolvimento desse projeto é testar e praticar meus conhecimentos em React pois ele é feito 100% usando React
+                            </p>
+                            <div className="container_space_between">
+                                <button className="btn">
+                                    <a href="https://matheushnunes.github.io/projeto-tabuada/" target="_blank" rel="external">Acessar Projeto</a>
+                                </button>
+                                <button className="btn">
+                                    <a href="https://github.com/matheushnunes/projeto-tabuada" target="_blank" rel="external">Ver repositorio</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="project">
+                    <h3>Tabuada</h3>
+                    <div className="container_project">
+                        <div className="container_img_project">
+                            <button className="btn see_more">
+                                Ver mais
+                            </button>
+                            <img src="../src/assets/images/home_page_tabuada.png" alt="tela principal do SGA Online"/>
+                        </div>
+                        <div className="info_project">
+                            <p className="about_project">
+                                Um site onde é possível testar seus conhecimentos e aprender as tabuadas da matemática. Objeto principal para o desenvolvimento desse projeto é testar e praticar meus conhecimentos em React pois ele é feito 100% usando React
+                            </p>
+                            <div className="container_space_between">
+                                <button className="btn">
+                                    <a href="https://matheushnunes.github.io/projeto-tabuada/" target="_blank" rel="external">Acessar Projeto</a>
+                                </button>
+                                <button className="btn">
+                                    <a href="https://github.com/matheushnunes/projeto-tabuada" target="_blank" rel="external">Ver repositorio</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
     )
