@@ -5,18 +5,41 @@
 }
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    --main_color: #222222;
+    --main_color-1: #1C1C1C;
+    --main_color1: #303030;
+    --text_color: #ffffff;
+    --background_color: #000000;
+    --blue: #0B00A1;
+    --yellow: #A18E00;
+    --ico_theme: url('../assets/images/ico_dark_mode.svg');
+    font-size: 0.625rem; /* 10px */
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+body {
+    background-color: var(--main_color);
+    color: var(--text_color);
+    font: normal 1.6rem arial;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+img {
+    width: 50px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background-color: var(--main_color-1);
+    border-bottom: var(--blue) 4px solid;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    gap: 1rem;
 }
 
 input[type="checkbox"] {
@@ -26,30 +49,36 @@ input[type="checkbox"] {
 }
 
 .toggle_theme {
+    display: flex;
     background-color: transparent;
     border: none;
 }
 
-label {
-    display: block;
+.label_toggle_switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 35px;
-    height: 15px;
-    background-color: #551759;
+    height: 1.7rem;
+    background-color: var(--blue);
     border-radius: 100px;
     position: relative;
     cursor: pointer;
     transition: 0.5s;
 }
 
-label::after {
+.label_toggle_switch::after {
     content: "";
     width: 12px;
     height: 12px;
-    background-color: #cca5cf;
+    background-color: #000000;
+    background-image: var(--ico_theme);
+    background-position: center;
+    background-size: cover;
     position: absolute;
     border-radius: 70px;
-    top: 1.5px;
-    left: 1.5px;
+    top: 2.5px;
+    left: 2.5px;
     transition: 0.5s;
 }
 
@@ -58,6 +87,4 @@ input:checked + label:after {
     transform: translateX(-100%);
 }
 
-img {
-    /* width: 50px; */
-}
+
