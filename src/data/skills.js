@@ -15,14 +15,14 @@ export const skills = [
         label: "JavaScript"
     },
     {
-        img: "/src/assets/images/logo_git.png",
-        alt: "logo Git",
-        label: "Git"
-    },
-    {
         img: "/src/assets/images/logo_gitHub.png",
         alt: "logo GitHub",
         label: "GitHub"
+    },
+    {
+        img: "/src/assets/images/logo_git.png",
+        alt: "logo Git",
+        label: "Git"
     },
     {
         img: "/src/assets/images/logo_react.png",

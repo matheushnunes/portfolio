@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import icoDark from "../assets/images/ico_dark_mode.svg"; // Importação correta
 import icoLight from "../assets/images/ico_light_mode.svg"; // Importação correta
 
@@ -6,15 +6,7 @@ export default function Header() {
     const [isDarkTheme, setIsDarkTheme] = useState(true);
 
     function toggleTheme(e) {
-        const newTheme = e.target.checked;
-        setIsDarkTheme(newTheme);
-
-        // Usa os imports diretamente, sem depender do estado
-        const root = document.documentElement;
-        root.style.setProperty(
-            '--ico_theme',
-            `url(${newTheme ? icoLight : icoDark})` // Troca os SVGs diretamente
-        );
+        setIsDarkTheme(!isDarkTheme);
     }
 
     return (
@@ -25,16 +17,21 @@ export default function Header() {
                 <a href="#">Projetos</a>
                 <a href="#">Contato</a>
             </nav>
-            <button className="toggle_theme">
+            <button className="toggle-theme" onClick={toggleTheme}>
+                <div className="container-ico-theme">
+                    <img src={icoLight} alt="icone tema claro" className="ico-theme"/>
+                    <img src={icoDark} alt="icone tema escuro" className="ico-theme"/>
+                </div>
                 <input
-                    id="toggle_switch"
-                    name="toggle_switch"
+                    id="toggle-switch"
+                    name="toggle-switch"
                     type="checkbox"
                     checked={isDarkTheme}
-                    onChange={toggleTheme}
+                    readOnly
                 />
-                <label htmlFor="toggle_switch" className="label_toggle_switch"></label>
+                <label htmlFor="toggle-switch" className="label-toggle-switch"></label>
             </button>
         </header>
     )
 }
+

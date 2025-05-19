@@ -1,21 +1,21 @@
-export default function Project ({title, heroImage, description, projecLink, repoLink}) {
+export default function Project ({title, heroImage, description, projectLink, repoLink}) {
     return (
         <div className="project">
             <h3>{title}</h3>
-            <div className="container_project">
-                <div className="container_img_project">
-                    <button className="btn see_more">
+            <div className="container-project">
+                <div className="container-img-project">
+                    <button className="btn see-more">
                         Ver mais
                     </button>
-                    <img src={heroImage} alt={"tela Principal do " + title}/>
+                    <img src={heroImage} alt={`tela Principal do ${title}`}/>
                 </div>
-                <div className="info_project">
-                    <p className="about_project">
+                <div className="info-project">
+                    <p className="about-project">
                         {description}
                     </p>
-                    <div className="container_space_between">
+                    <div className="container-space-between">
                         <button className="btn">
-                            <a href={projecLink} target="_blank" rel="external">Acessar Projeto</a>
+                            <a href={projectLink} target="_blank" rel="external">Acessar Projeto</a>
                         </button>
                         <button className="btn">
                             <a href={repoLink} target="_blank" rel="external">Ver repositorio</a>
@@ -26,3 +26,4 @@ export default function Project ({title, heroImage, description, projecLink, rep
         </div>
     )
 }
+

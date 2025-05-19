@@ -5,20 +5,35 @@
 }
 
 :root {
-    --main_color: #222222;
-    --main_color-1: #1C1C1C;
-    --main_color1: #303030;
-    --text_color: #ffffff;
-    --background_color: #000000;
+    --main-color: #222222;
+    --main-color-1: #1C1C1C;
+    --main-color1: #303030;
+    --text-color: #ffffff;
+    --background-color: #000000;
     --blue: #0B00A1;
+    --light-blue: #6BB0FF;
     --yellow: #A18E00;
-    --ico_theme: url('../assets/images/ico_dark_mode.svg');
-    font-size: 0.625rem; /* 10px */
+
+    font-size: 0.625rem;
+    /* 10px */
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--main-color-1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--blue);
+    border-radius: 10px;
 }
 
 body {
-    background-color: var(--main_color);
-    color: var(--text_color);
+    background-color: var(--main-color);
+    color: var(--text-color);
     font: normal 1.6rem arial;
 }
 
@@ -26,20 +41,44 @@ img {
     width: 50px;
 }
 
+.container-space-between {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 120rem;
+    z-index: 2;
+}
+
+strong {
+    color: var(--light-blue);
+}
+
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 1.5rem;
-    background-color: var(--main_color-1);
+    background-color: var(--main-color-1);
     border-bottom: var(--blue) 4px solid;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
 }
 
 header nav {
     display: flex;
     flex-direction: row;
     width: fit-content;
-    gap: 1rem;
+    gap: 1.5rem;
+}
+
+nav a {
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--yellow);
+    transition: .3s;
 }
 
 input[type="checkbox"] {
@@ -48,18 +87,13 @@ input[type="checkbox"] {
     visibility: hidden;
 }
 
-.toggle_theme {
+.toggle-theme {
     display: flex;
     background-color: transparent;
     border: none;
-}
-
-.label_toggle_switch {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    width: 35px;
-    height: 1.7rem;
+    min-width: 60px;
+    height: 25px;
     background-color: var(--blue);
     border-radius: 100px;
     position: relative;
@@ -67,14 +101,33 @@ input[type="checkbox"] {
     transition: 0.5s;
 }
 
-.label_toggle_switch::after {
+.container-ico-theme {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.32rem;
+    z-index: 1;
+}
+
+.ico-theme {
+    position: relative;
+    width: 18px;
+    z-index: 2;
+}
+
+.label-toggle-switch {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.label-toggle-switch::after {
     content: "";
-    width: 12px;
-    height: 12px;
+    width: 20px;
+    height: 20px;
     background-color: #000000;
-    background-image: var(--ico_theme);
-    background-position: center;
-    background-size: cover;
     position: absolute;
     border-radius: 70px;
     top: 2.5px;
@@ -82,9 +135,286 @@ input[type="checkbox"] {
     transition: 0.5s;
 }
 
-input:checked + label:after {
+input:checked+label:after {
     left: calc(100% - 2px);
     transform: translateX(-100%);
 }
 
+.apresentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    height: 100vh;
+}
+
+.container-titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    text-align: center;
+    max-width: 100rem;
+}
+
+.flex-left {
+    align-self: flex-start;
+}
+
+.flex-right {
+    align-self: flex-end;
+}
+
+.color-blue {
+    color: var(--light-blue);
+}
+
+h1 {
+    font: bolder 7rem times;
+    background-image: url('../assets/images/background_gold.gif');
+    /* Imagem de fundo */
+    background-size: auto;
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    -text-fill-color: transparent;
+}
+
+.typing-effect-top {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid transparent;
+    /* Inicia transparente */
+    width: 0;
+    animation:
+        typing-top 2s steps(40, end) forwards,
+        blink-caret 1s step-end 2s,
+        /* Só pisca durante 3s */
+        hide-caret 2s step-end forwards;
+    /* Esconde ao final */
+}
+
+.typing-effect-bottom {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid transparent;
+    /* Inicia transparente */
+    width: 0;
+    animation:
+        typing-bottom 2s steps(40, end) forwards,
+        blink-caret 1s step-end infinite;
+    /* Só pisca durante 3s */
+    animation-delay: 2s;
+}
+
+#apresentation-title-h2 {
+    display: block;
+    font: bold 6.2rem times;
+    width: 40%;
+    color: var(--text-color);
+}
+
+#apresentation-title-h3 {
+    font: bold 3.5rem times;
+    color: var(--text-color);
+}
+
+.section-title-h2 {
+    font: bold 3.5rem times;
+    color: var(--yellow);
+    margin: 0 0 8rem 0;
+    z-index: 2;
+}
+
+/* Seção Sobre mim */
+.about-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5rem;
+    text-align: center;
+    height: 100vh;
+    background: linear-gradient(to bottom,
+            #30303000 0%,
+            var(--main-color1) 20%,
+            var(--main-color1) 83%,
+            #30303000 97%);
+}
+
+.text-about {
+    max-width: 48rem;
+    text-align: justify;
+    font-size: 1.8rem;
+}
+
+.buttons-about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn {
+    width: 100%;
+    max-width: 20rem;
+    background-color: var(--blue);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--text-color);
+    font-size: 1.6rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 8px 10px 28px #0b00a134;
+}
+
+.about-background {
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    font-size: 600px;
+    color: #2222223a;
+    z-index: 1;
+    user-select: none;
+    /* Bloqueia seleção */
+    -webkit-user-select: none;
+    /* Safari/Chrome */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE/Edge */
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    height: 100vh;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            var(--main-color-1) 50%,
+            transparent 100%);
+}
+
+.container-skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1.5rem;
+    text-align: center;
+    gap: 8rem;
+}
+
+.skill {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.skill img {
+    width: 7rem;
+}
+
+.donut {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--blue) 0% 30%,
+        /* Cor do progresso */
+        var(--main-color1) 30% 100%
+        /* Cor do fundo */
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.donut::before {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 130px;
+    height: 130px;
+    background: var(--main-color);
+    border-radius: 50%;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+#donut-html-5 {
+    background: conic-gradient(
+        var(--blue) 0% 60%,
+        /* Cor do progresso */
+        var(--main-color1) 60% 100%
+        /* Cor do fundo */
+    );
+}
+
+#donut-css-3 {
+    background: conic-gradient(
+        var(--blue) 0% 50%,
+        /* Cor do progresso */
+        var(--main-color1) 50% 100%
+        /* Cor do fundo */
+    );
+}
+
+#donut-javascript {
+    background: conic-gradient(
+        var(--blue) 0% 40%,
+        /* Cor do progresso */
+        var(--main-color1) 40% 100%
+        /* Cor do fundo */
+    );
+}
+
+#donut-github {
+    background: conic-gradient(
+        var(--blue) 0% 40%,
+        var(--main-color1) 40% 100%
+    );
+}
+
+#donut-git {
+    background: conic-gradient(
+        var(--blue) 0% 35%,
+        var(--main-color1) 35% 100%
+    );
+}
+
+#donut-react {
+    background: conic-gradient(
+        var(--blue) 0% 33%,
+        var(--main-color1) 33% 100%
+    );
+}
+
+#donut-figma {
+    background: conic-gradient(
+        var(--blue) 0% 33%,
+        var(--main-color1) 33% 100%
+    );
+}
+
+#donut-node-js {
+    background: conic-gradient(
+        var(--blue) 0% 30%,
+        var(--main-color1) 30% 100%
+    );
+}
 
