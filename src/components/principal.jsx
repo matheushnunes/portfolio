@@ -9,8 +9,8 @@ export default function Principal() {
             <section className="apresentation">
                 <div className="container-titles">
                     <h2 className="flex-left typing-effect-top" id="apresentation-title-h2">Olá, eu sou o</h2>
-                    <h1>MATHEUS HENRIQUE</h1>
-                    <h3 className="flex-right typing-effect-bottom" id="apresentation-title-h3"><span className="color-blue">&lt;</span>Desenvolvedor Front-end <span className="color-blue">/&gt;</span></h3>
+                    <h1><span className="h1-matheus">MATHEUS</span> <span className="h1-henrique">HENRIQUE</span></h1>
+                    <h3 className="flex-right typing-effect-bottom" id="apresentation-title-h3"><span className="color-blue">&lt;</span>Desenvolvedor Front-end<span className="color-blue">/&gt;</span></h3>
                 </div>
             </section>
             <section className="about-me">

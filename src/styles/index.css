@@ -180,16 +180,29 @@ main section {
 }
 
 h1 {
-    font: bolder 7rem times;
+    text-align: center;
+    font: bolder 7rem "Audiowide", sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+.h1-matheus,
+.h1-henrique {
+    display: inline-block;
     background-image: url('../assets/images/background_gold.gif');
-    /* Imagem de fundo */
     background-size: auto;
     background-position: center;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 0;
-    -text-fill-color: transparent;
+    transform: translateY(100vh);
+    animation: slideUp 1.5s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.h1-henrique {
+    transform: translateY(-100vh);
+    animation-delay: 1.5s;
 }
 
 .typing-effect-top {
@@ -216,7 +229,7 @@ h1 {
         typing-bottom 2s steps(40, end) forwards,
         blink-caret 1s step-end infinite;
     /* Só pisca durante 3s */
-    animation-delay: 2s;
+    animation-delay: 3s;
 }
 
 #apresentation-title-h2 {
@@ -227,7 +240,7 @@ h1 {
 }
 
 #apresentation-title-h3 {
-    font: bold 3.5rem times;
+    font: bold 2.7rem "Roboto Mono", monospace;
     color: var(--text-color);
 }
 
@@ -284,9 +297,10 @@ h1 {
 }
 
 .about-background {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'roboto mono', monospace;
+    text-align: center;
     position: absolute;
-    font-size: 600px;
+    font-size: 50vw;
     color: #2222223a;
     z-index: 1;
     user-select: none;
