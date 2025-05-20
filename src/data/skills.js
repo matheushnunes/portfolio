@@ -25,6 +25,16 @@ export const skills = [
         label: "Git"
     },
     {
+        img: "/src/assets/images/logo_english.png",
+        alt: "logo Inglês",
+        label: "Inglês"
+    },
+    {
+        img: "/src/assets/images/logo_scrum.png",
+        alt: "logo Scrum",
+        label: "Scrum"
+    },
+    {
         img: "/src/assets/images/logo_react.png",
         alt: "logo React",
         label: "React"
@@ -38,5 +48,25 @@ export const skills = [
         img: "/src/assets/images/logo_node.png",
         alt: "logo Node js",
         label: "Node js"
-    }
+    },
+    {
+        img: "/src/assets/images/logo_mysql.png",
+        alt: "logo MySQL",
+        label: "MySQL",
+    },
+    {
+        img: "/src/assets/images/logo_python.png",
+        alt: "logo Python",
+        label: "Python"
+    },
+    {
+        img: "/src/assets/images/logo_java.png",
+        alt: "logo Java",
+        label: "Java"
+    },
+    {
+        img: "/src/assets/images/logo_csharp.png",
+        alt: "logo C#",
+        label: "C#"
+    },
 ]

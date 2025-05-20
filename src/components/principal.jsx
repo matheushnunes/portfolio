@@ -36,7 +36,7 @@ export default function Principal() {
                     {
                         skills.map((skill, idx) => (
                             <div className="skill" key={idx}>
-                                <div className="donut" id={"donut-" + skill.label.replace(" ", "-").toLowerCase()}></div>
+                                <div className="donut" id={"donut-" + skill.label.replace(" ", "-").replace("#", "sharp").toLowerCase()}></div>
                                 <div className="content">
                                     <img src={skill.img} alt={skill.alt} />
                                     <p>{skill.label}</p>
