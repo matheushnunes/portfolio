@@ -7,6 +7,7 @@ export default function Project ({title, heroImage, description, projectLink, re
                     <button className="btn see-more">
                         Ver mais
                     </button>
+                    <div className="dark-background"></div>
                     <img src={heroImage} alt={`tela Principal do ${title}`}/>
                 </div>
                 <div className="info-project">
@@ -14,11 +15,11 @@ export default function Project ({title, heroImage, description, projectLink, re
                         {description}
                     </p>
                     <div className="container-space-between">
-                        <button className="btn">
-                            <a href={projectLink} target="_blank" rel="external">Acessar Projeto</a>
+                        <button className="custom-btn btn-2">
+                            <a href={projectLink} target="_blank" rel="external"><span>Acessar Projeto</span></a>
                         </button>
-                        <button className="btn">
-                            <a href={repoLink} target="_blank" rel="external">Ver repositorio</a>
+                        <button className="custom-btn btn-2">
+                            <a href={repoLink} target="_blank" rel="external"><span>Ver repositorio</span></a>
                         </button>
                     </div>
                 </div>

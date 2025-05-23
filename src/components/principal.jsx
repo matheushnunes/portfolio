@@ -20,11 +20,11 @@ export default function Principal() {
                         Estudo desenvolvimento de software desde 2021 e, atualmente, curso <strong>Análise e Desenvolvimento de Sistemas</strong>. As tecnologias que mais domino são <strong>JavaScript, HTML e CSS</strong>. Estou atuando como desenvolvedor full-stack em um projeto acadêmico em equipe e estou sempre buscando evoluir como profissional.
                     </p>
                     <div className="buttons-about-me">
-                        <button className="btn">
-                            <a href="../src/assets/files/cv_matheus_henrique.pdf" download={"cv_matheus_henrique.pdf"}>Baixar CV</a>
+                        <button className="custom-btn btn-2">
+                            <a href="../src/assets/files/cv_matheus_henrique.pdf" download={"cv_matheus_henrique.pdf"}><span>Baixar CV</span></a>
                         </button>
-                        <button className="btn">
-                            <a href="#">Entre em Contato</a>
+                        <button className="custom-btn btn-2">
+                            <a href="#"><span>Entre em Contato</span></a>
                         </button>
                     </div>
                 </div>
@@ -48,18 +48,20 @@ export default function Principal() {
             </section>
             <section className="projects">
                 <h2 className="section-title-h2">Projetos</h2>
-                {
-                    projects.map((project, idx) => (
-                        <Project
-                            key={idx}
-                            title={project.title}
-                            heroImage={project.heroImage}
-                            description={project.description}
-                            projectLink={project.projectLink}
-                            repoLink={project.repoLink}
-                        />
-                    ))
-                }
+                <div className="container-projects">
+                    {
+                        projects.map((project, idx) => (
+                            <Project
+                                key={idx}
+                                title={project.title}
+                                heroImage={project.heroImage}
+                                description={project.description}
+                                projectLink={project.projectLink}
+                                repoLink={project.repoLink}
+                            />
+                        ))
+                    }
+                </div>
             </section>
             <section className="contacts">
                 <h2 className="section-title-h2">Contato</h2>
