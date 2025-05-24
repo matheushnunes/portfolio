@@ -11,6 +11,7 @@
     --text-color: #ffffff;
     --background-color: #000000;
     --blue: #0B00A1;
+    --blue-1: #1b0bff;
     --light-blue: #6BB0FF;
     --yellow: #A18E00;
 
@@ -546,6 +547,34 @@ h1 {
     }
 }
 
+.contacts {
+    margin-bottom: 8rem;
+    .container-contacts {
+        width: 80%;
+        max-width: 120rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem;
+        gap: 2rem;
+    }
+    .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .contact img {
+        width: 5rem;
+    }
+    .contact button {
+        background-color: var(--blue);
+        border: none;
+        border-radius: 50%;
+        padding: 1.5rem;
+    }
+}
 
 /* Botão customizado */
 .custom-btn {
@@ -641,4 +670,9 @@ h1 {
 
 .btn-2 span:hover:after {
     width: 100%;
+}
+
+.btn-3:hover {
+    background-color: var(--blue-1);
+    border: 1px solid var(--light-blue);
 }

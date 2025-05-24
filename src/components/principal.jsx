@@ -80,13 +80,13 @@ export default function Principal() {
                     </div>
                     <div className="contact">
                         <button>
-                            <img src="/src/assets/images/logo_gitHub.png" alt="Icone email"/>
+                            <img src="/src/assets/images/logo_gitHub.png" alt="Icone gitHub"/>
                         </button>
                         <a href="#">matheushnunes</a>
                     </div>
                     <div className="contact">
                         <button>
-                            <img src="/src/assets/images/ico_linkedin.svg" alt="Icone email"/>
+                            <img src="/src/assets/images/ico_linkedin.png" alt="Icone linkedin"/>
                         </button>
                         <a href="#">Matheus Henrique Nunes</a>
                     </div>

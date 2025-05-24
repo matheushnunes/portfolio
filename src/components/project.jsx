@@ -4,7 +4,7 @@ export default function Project ({title, heroImage, description, projectLink, re
             <h3>{title}</h3>
             <div className="container-project">
                 <div className="container-img-project">
-                    <button className="btn see-more">
+                    <button className="btn btn-3 see-more">
                         Ver mais
                     </button>
                     <div className="dark-background"></div>
