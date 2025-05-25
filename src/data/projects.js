@@ -4,7 +4,9 @@ export const projects = [
         heroImage: "../src/assets/images/dashboard_sga_online.png",
         description: " O SGA (Sistema de Gestão Automotivo) Online é um projeto acadêmico desenvolvido em equipe com mais quatro colegas. Nosso objetivo é criar uma versão moderna, web e responsiva de um sistema ERP desktop já utilizado por uma empresa do setor automotivo.",
         projectLink: "https://sga-web.github.io/SGA_ONLINE/Front_end/Principal/principal.html",
-        repoLink: "https://github.com/SGA-WEB/SGA_ONLINE"
+        repoLink: "https://github.com/SGA-WEB/SGA_ONLINE",
+        features: ["Dashboard dinâmico com gráficos interativos e traz informações em tempo real do banco de dados do sistema", "CRUD Layout para criar, visualizar, editar e excluir dados das tabelas", "Posibilidade de fazer uma pesquisa por um campo especifico de uma tabela", "Editar dados do usuário como: nome, senha, email e foto de perfil"],
+        technologies: ["HTML", "CSS", "JavaScript","Node.js", "PostgreSQL", "Figma"]
     },
     {
         title: "Tabuada",

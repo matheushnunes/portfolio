@@ -2,8 +2,12 @@ import Project from "./project.jsx"
 
 import { skills } from "../data/skills.js"
 import { projects } from "../data/projects.js"
+import { useState } from "react"
+import ProjectDetails from "./projectDetails.jsx"
 
 export default function Principal() {
+    const [modalContent, setModalContent] = useState({})
+
     return (
         <main>
             <section className="apresentation">
@@ -53,11 +57,7 @@ export default function Principal() {
                         projects.map((project, idx) => (
                             <Project
                                 key={idx}
-                                title={project.title}
-                                heroImage={project.heroImage}
-                                description={project.description}
-                                projectLink={project.projectLink}
-                                repoLink={project.repoLink}
+                                projectData = {project}
                             />
                         ))
                     }
@@ -67,28 +67,36 @@ export default function Principal() {
                 <h2 className="section-title-h2">Contato</h2>
                 <div className="container-contacts">
                     <div className="contact">
-                        <button>
-                            <img src="/src/assets/images/ico_mail.svg" alt="Icone email"/>
+                        <button className="btn-3">
+                            <a href="mailto:matheushnunes2005@gmail.com">
+                                <img src="/src/assets/images/ico_mail.svg" alt="Icone email"/>
+                            </a>
                         </button>
-                        <a href="#">matheushnunes2005@gmail.com</a>
+                        <p>matheushnunes2005@gmail.com</p>
                     </div>
                     <div className="contact">
                         <button>
-                            <img src="/src/assets/images/ico_telephone.svg" alt="Icone telefone"/>
+                            <a href="https://wa.me/5562994721231" target="_blank">
+                                <img src="/src/assets/images/ico_telephone.svg" alt="Icone telefone"/>
+                            </a>
                         </button>
-                        <a href="#">(62) 99472-1231</a>
+                        <p>(62) 99472-1231</p>
                     </div>
                     <div className="contact">
                         <button>
-                            <img src="/src/assets/images/logo_gitHub.png" alt="Icone gitHub"/>
+                            <a href="https://github.com/matheushnunes" target="_blank">
+                                <img src="/src/assets/images/logo_gitHub.png" alt="Icone gitHub"/>
+                            </a>
                         </button>
-                        <a href="#">matheushnunes</a>
+                        <p>matheushnunes</p>
                     </div>
                     <div className="contact">
                         <button>
-                            <img src="/src/assets/images/ico_linkedin.png" alt="Icone linkedin"/>
+                            <a href="https://www.linkedin.com/in/matheus-henrique-nunes-a4988027a/" target="_blank">
+                                <img src="/src/assets/images/ico_linkedin.png" alt="Icone linkedin"/>
+                            </a>
                         </button>
-                        <a href="#">Matheus Henrique Nunes</a>
+                        <p>Matheus Henrique Nunes</p>
                     </div>
                 </div>
             </section>

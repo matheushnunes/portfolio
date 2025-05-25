@@ -51,13 +51,14 @@ strong {
 }
 
 header {
+    position: fixed;
+    top: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 1.5rem;
     background-color: var(--main-color-1);
     border-bottom: var(--blue) 4px solid;
-    position: fixed;
     width: 100%;
     z-index: 3;
 }
@@ -136,6 +137,10 @@ input[type="checkbox"] {
 input:checked+label:after {
     left: calc(100% - 2px);
     transform: translateX(-100%);
+}
+
+main {
+    margin-top: 6rem;
 }
 
 main section {
@@ -482,7 +487,7 @@ h1 {
         font: bold 2.7rem "times new roman", sans-serif;
         color: var(--text-color);
         text-align: center;
-        margin-bottom: 6rem;
+        margin: 2rem 0 4rem 0;
     }
 
     .container-project {
@@ -547,6 +552,68 @@ h1 {
     }
 }
 
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000088;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+
+
+    .projectDetails {
+        background-color: var(--main-color1);
+        padding: 2rem;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin: 2rem;
+    }
+
+    h1 {
+        font: bold 2.7rem "times new roman", sans-serif;
+        color: var(--yellow);
+        text-align: center;
+        margin: 2rem 0 4rem 0;
+    }
+
+    .btn-close {
+        border: none;
+        color: var(--text-color);
+        background-color: transparent;
+        cursor: pointer;
+        align-self: flex-end;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .images {
+        width: 60%;
+    }
+
+    .info {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
 .contacts {
     margin-bottom: 8rem;
     .container-contacts {
@@ -573,6 +640,12 @@ h1 {
         border: none;
         border-radius: 50%;
         padding: 1.5rem;
+        cursor: pointer;
+        transition: .3s;
+    }
+    .contact button:hover {
+        background-color: var(--blue-1);
+        transition: .3s;
     }
 }
 
