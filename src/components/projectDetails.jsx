@@ -1,23 +1,27 @@
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
+import { useState, useEffect } from "react"
+import ImageGallery from "./imageGallery.jsx";
 
 export default function ProjectDetails () {
     const { state } = useLocation(); // Acessa o estado enviado
     const { projectData } = state || {};
+    const [images, setImages] = useState([]);
+    const navigate = useNavigate();
 
     return (
         <main>
             <section className="projectDetails">
-                <button className="btn-close" onClick={()=>closeModal()}>
-                    X
+                <button className="btn-back" onClick={()=>navigate(-1)}>
+                    &lt; voltar
                 </button>
                 <h1>{projectData.title}</h1>
                 <div className="main">
                     <div className="images">
                         <div className="desktopImages">
-                            <img src={projectData.heroImage} alt={`tela Principal do ${projectData.title}`}/>
+                            <ImageGallery imageSize="desktop" imagePath={projectData.imagePath} />
                         </div>
                         <div className="mobileImages">
-
+                            <ImageGallery imageSize="mobile" imagePath={projectData.imagePath} />
                         </div>
                     </div>
                     <div className="info">
