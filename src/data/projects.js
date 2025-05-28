@@ -7,14 +7,17 @@ export const projects = [
         projectLink: "https://sga-web.github.io/SGA_ONLINE/Front_end/Principal/principal.html",
         repoLink: "https://github.com/SGA-WEB/SGA_ONLINE",
         features: ["Dashboard dinâmico com gráficos interativos e traz informações em tempo real do banco de dados do sistema", "CRUD Layout para criar, visualizar, editar e excluir dados das tabelas", "Posibilidade de fazer uma pesquisa por um campo especifico de uma tabela", "Editar dados do usuário como: nome, senha, email e foto de perfil"],
-        technologies: ["HTML", "CSS", "JavaScript","Node.js", "PostgreSQL", "Figma"]
+        technologies: ["HTML 5", "CSS 3", "JavaScript", "Node.js", "PostgreSQL 17", "Figma", "Neon DB (para hospedagem do banco de dados)"]
     },
     {
         title: "Tabuada",
         heroImage: "../src/assets/images/tabuada/home_page_tabuada.png",
-        description: "Um site onde é possível testar seus conhecimentos e aprender as tabuadas da matemática. Objeto principal para o desenvolvimento desse projeto é testar e praticar meus conhecimentos em React, pois ele é feito 100% usando React.",
+        imagePath: "tabuada",
+        description: "Um site onde é possível testar seus conhecimentos e aprender as tabuadas da matemática. Objeto principal para o desenvolvimento desse projeto foi para testar e praticar meus conhecimentos em React, pois ele é feito 100% usando React.",
         projectLink: "https://matheushnunes.github.io/projeto-tabuada/",
-        repoLink: "https://github.com/matheushnunes/projeto-tabuada"
+        repoLink: "https://github.com/matheushnunes/projeto-tabuada",
+        features: ["Responder operações matemáticas interativas.", "Definir alguns parâmetros para as operações.", "Visualizar tabuadas de multiplicação, divisão, adição e subtração.", "CAlternar entre os temas claro e escuro."],
+        technologies: ["React", "CSS", "JavaScript", "Figma"]
     },
     {
         title: "Conex Consult",

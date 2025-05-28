@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import ImageGallery from "./imageGallery.jsx";
+import "../styles/projectDetails.css"
 
 export default function ProjectDetails () {
     const { state } = useLocation(); // Acessa o estado enviado

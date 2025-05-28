@@ -42,6 +42,19 @@ body {
     transform: rotate(180deg);
 }
 
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+}
+
 .container-space-between {
     display: flex;
     justify-content: space-between;
@@ -557,169 +570,6 @@ h1 {
     }
 }
 
-.projectDetails {
-    padding: 2rem;
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    margin: 2rem;
-
-    h1 {
-        font: bold 2.7rem "times new roman", sans-serif;
-        color: var(--yellow);
-        text-align: center;
-        margin-bottom: 4rem;
-    }
-
-    h2 {
-        font: bold 2.2rem "times new roman", sans-serif;
-    }
-
-    ul {
-        list-style: circle;
-        margin-left: 2rem;
-    }
-
-    li {
-        margin-bottom: 1rem;
-    }
-
-    .btn-back {
-        border: none;
-        color: var(--text-color);
-        background-color: transparent;
-        cursor: pointer;
-        align-self: flex-start;
-        font-size: 1.6rem;
-    }
-
-    img {
-        width: 100%;
-    }
-
-    .main {
-        display: flex;
-        flex-direction: row;
-        gap: 4rem;
-    }
-
-    .images {
-        width: 60%;
-    }
-
-    .desktopImages {
-        margin-bottom: 2rem;
-    }
-
-    .info {
-        width: 40%;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .gallery {
-        position: relative;
-    }
-
-    .controls {
-        position: absolute;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 2rem;
-        width: 100%;
-        height: 100%;
-        top: 0;
-    }
-
-    .btn-fullscreen {
-        position: absolute;
-        top: 0;
-        right: 0;
-        border: none;
-        background-color: transparent;
-        padding: 1.5rem;
-        cursor: pointer;
-        width: 7rem;
-    }
-
-    .controls button {
-        display: flex;
-        align-items: center;
-        background-color: transparent;
-        position: relative;
-        height: 50%;
-        border: none;
-        border-radius: 50%;
-        top: 20%;
-        padding: 1.5rem;
-        cursor: pointer;
-        transition: .1s;
-    }
-
-    .controls button img {
-        width: 4rem;
-       z-index: 5;
-    }
-
-    .btn-back-image::after {
-        content: "";
-        position: absolute;
-        left: -3rem;
-        border-radius: 50%;
-        height: 30%;
-        width: 3rem;
-        background: transparent;
-
-        /* Estado inicial (sem sombra) */
-        box-shadow: none;
-
-        /* Configuração da transição */
-        transition: box-shadow 0.1s ease-in-out;
-        /*       propriedade | duração | timing-function */
-    }
-
-    .btn-back-image:hover::after {
-        box-shadow: 30px 0 43px #0000007a;
-    }
-
-    .btn-back-image:hover img {
-        display: block;
-    }
-
-    .btn-next-image::after {
-        content: "";
-        position: absolute;
-        right: -3rem;
-        border-radius: 50%;
-        height: 30%;
-        width: 3rem;
-        background: transparent;
-
-        /* Estado inicial (sem sombra) */
-        box-shadow: none;
-
-        /* Configuração da transição */
-        transition: box-shadow 0.1s ease-in-out;
-        /*       propriedade | duração | timing-function */
-    }
-
-    .btn-next-image:hover::after {
-        box-shadow: -30px 0 43px #0000007a;
-    }
-
-    .btn-next-image:hover img {
-        display: block;
-    }
-
-    .mobileImages {
-        max-width: 40rem;
-    }
-
-}
 
 .contacts {
     margin-bottom: 8rem;

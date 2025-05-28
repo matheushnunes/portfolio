@@ -4,6 +4,7 @@ const ImageGallery = ({ imageSize, imagePath }) => {
     const [images, setImages] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(2);
     const [isLoading, setIsLoading] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         const loadImages = async () => {
@@ -26,7 +27,6 @@ const ImageGallery = ({ imageSize, imagePath }) => {
 
                 setImages(loadedImages);
                 setIsLoading(false);
-                console.log('Imagens carregadas:', loadedImages);
             } catch (error) {
                 console.error('Erro ao carregar imagens:', error);
                 setIsLoading(false);
@@ -45,7 +45,7 @@ const ImageGallery = ({ imageSize, imagePath }) => {
                 src={images[currentIndex]}
                 alt={`Imagem ${currentIndex + 1}`}
             />
-            <button className='btn-fullscreen'>
+            <button className='btn-fullscreen' onClick={() => setIsModalOpen(true)}>
                 <img src="/src/assets/images/fullscreen.svg" alt="icone tela cheia" />
             </button>
             <div className="controls">
@@ -64,6 +64,37 @@ const ImageGallery = ({ imageSize, imagePath }) => {
                     <img src="/src/assets/images/arrow.svg" alt="seta para direita" className='rotate' />
                 </button>
             </div>
+            {isModalOpen && (
+                <div className="modal">
+                    <div className="popup-image">
+                        <button onClick={() => {setIsModalOpen(false); console.log(isModalOpen)}} className='btn-exit-fullscreen'>
+                            <img src="/src/assets/images/fullscreen_exit.svg" alt="" />
+                        </button>
+                        <div className="container-image-and-btns">
+                            <button
+                                className='btn-back-image btn-modal'
+                                onClick={() => setCurrentIndex(prev =>
+                                    (prev - 1 + images.length) % images.length
+                                )}
+                            >
+                                <img src="/src/assets/images/arrow.svg" alt="seta para esquerda" />
+                            </button>
+                            <img
+                                src={images[currentIndex]}
+                                alt={`Imagem ${currentIndex + 1}`}
+                            />
+                            <button
+                                className='btn-next-image btn-modal'
+                                onClick={() => setCurrentIndex(prev =>
+                                    (prev + 1) % images.length
+                                )}
+                            >
+                                <img src="/src/assets/images/arrow.svg" alt="seta para direita" className='rotate' />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
