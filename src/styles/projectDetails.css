@@ -58,7 +58,11 @@
         width: 40%;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 3rem;
+    }
+
+    .technologies-list {
+        margin-bottom: 2rem;
     }
 
     .gallery {
@@ -100,9 +104,10 @@
         z-index: 5;
     }
 
-    .btn-fullscreen img:hover {
+    .btn-fullscreen:hover img {
         filter: brightness(0);
         cursor: pointer;
+        z-index: 5;
     }
 
     .btn-fullscreen::after {
@@ -112,12 +117,9 @@
         left: 6rem;
         width: 100%;
         height: 100%;
-    }
-
-    .btn-fullscreen:hover::after {
-        box-shadow: -30px 30px 40px 30px #00000041;
+        box-shadow: -30px 30px 40px 30px #0000005b;
         border-radius: 50%;
-        z-index: 1;
+        z-index: -1;
         transition: .3s;
     }
 
@@ -145,7 +147,7 @@
         content: "";
         position: absolute;
         border-radius: 50%;
-        height: 37%;
+        height: 39%;
         width: 3rem;
         background: transparent;
 
@@ -165,19 +167,30 @@
         right: -3rem;
     }
 
-    .btn-back-image:hover::after {
-        box-shadow: 30px 0 43px #0000007a;
+    .btn-back-image::after {
+        box-shadow: 30px 0 53px #0000007a;
     }
 
-    .btn-back-image:hover img,
-    .btn-next-image:hover img {
-        filter: brightness(0);
+    .controls {
+        .btn-back-image:hover img,
+        .btn-next-image:hover img {
+            filter: brightness(0);
+        }
+    }
+
+    .btn-next-image::after {
+        box-shadow: -30px 0 53px #0000007a;
     }
 
     .btn-next-image:hover::after {
-        box-shadow: -30px 0 43px #0000007a;
+        box-shadow: -30px 0 53px #ffffff7a;
     }
-
+    .btn-back-image:hover::after {
+        box-shadow: 30px 0 53px #ffffff7a;
+    }
+    .btn-fullscreen:hover::after {
+        box-shadow: -30px 30px 40px 30px #ffffff44;
+    }
 
     .mobileImages {
         max-width: 40rem;
@@ -196,14 +209,8 @@
 
         .btn-exit-fullscreen {
             width: 3rem;
-            filter: invert(1);
             margin-left: auto;
             cursor: pointer;
-        }
-
-        .btn-back-image,
-        .btn-next-image {
-            filter: invert(1);
         }
 
         .popup-image {

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const ImageGallery = ({ imageSize, imagePath }) => {
     const [images, setImages] = useState([]);
-    const [currentIndex, setCurrentIndex] = useState(2);
+    const [currentIndex, setCurrentIndex] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
 

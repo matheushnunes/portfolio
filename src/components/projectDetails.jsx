@@ -32,7 +32,7 @@ export default function ProjectDetails () {
                             {projectData.features.map((feature, index) => <li key={index}>{feature}</li>)}
                         </ul>
                         <h2>Tecnologias usadas</h2>
-                        <ul>
+                        <ul className="technologies-list">
                             {projectData.technologies.map((technology, index) => <li key={index}>{technology}</li>)}
                         </ul>
                         <div className="container-space-between">
