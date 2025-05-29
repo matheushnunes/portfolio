@@ -67,36 +67,36 @@ export default function Principal() {
                 <h2 className="section-title-h2">Contato</h2>
                 <div className="container-contacts">
                     <div className="contact">
-                        <button className="btn-3">
                             <a href="mailto:matheushnunes2005@gmail.com">
-                                <img src="/src/assets/images/ico_mail.svg" alt="Icone email"/>
+                                <button className="btn-3">
+                                    <img src="/src/assets/images/ico_mail.svg" alt="Icone email"/>
+                                </button>
+                                <p>matheushnunes2005@gmail.com</p>
                             </a>
-                        </button>
-                        <p>matheushnunes2005@gmail.com</p>
                     </div>
                     <div className="contact">
-                        <button>
                             <a href="https://wa.me/5562994721231" target="_blank">
-                                <img src="/src/assets/images/ico_telephone.svg" alt="Icone telefone"/>
+                                <button>
+                                    <img src="/src/assets/images/ico_telephone.svg" alt="Icone telefone"/>
+                                </button>
+                                <p>(62) 99472-1231</p>
                             </a>
-                        </button>
-                        <p>(62) 99472-1231</p>
                     </div>
                     <div className="contact">
-                        <button>
                             <a href="https://github.com/matheushnunes" target="_blank">
-                                <img src="/src/assets/images/logo_gitHub.png" alt="Icone gitHub"/>
+                                <button>
+                                    <img src="/src/assets/images/logo_gitHub.png" alt="Icone gitHub"/>
+                                </button>
+                                <p>matheushnunes</p>
                             </a>
-                        </button>
-                        <p>matheushnunes</p>
                     </div>
                     <div className="contact">
-                        <button>
                             <a href="https://www.linkedin.com/in/matheus-henrique-nunes-a4988027a/" target="_blank">
-                                <img src="/src/assets/images/ico_linkedin.png" alt="Icone linkedin"/>
+                                <button>
+                                    <img src="/src/assets/images/ico_linkedin.png" alt="Icone linkedin"/>
+                                </button>
+                                <p>Matheus Henrique Nunes</p>
                             </a>
-                        </button>
-                        <p>Matheus Henrique Nunes</p>
                     </div>
                 </div>
             </section>
