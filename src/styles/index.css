@@ -368,12 +368,29 @@ h1 {
     margin-bottom: .4rem;
 }
 
+.progress-bar {
+    width: 98%;
+    height: 98%;
+    border-radius: 50%;
+    background: conic-gradient(
+            transparent 0% 10%,
+            white 15% 25%,
+            transparent 30% 100%
+        );
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    rotate: -90deg;
+    overflow: hidden;
+    animation: infinite linear rotate 1s;
+}
+
 .donut {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     background: conic-gradient(
-            var(--blue) 0% 30%,
+           #0b00a1c7 0% 30%,
             /* Cor do progresso */
             var(--main-color1) 30% 100%
             /* Cor do fundo */
@@ -407,76 +424,74 @@ h1 {
 
 #donut-html-5 {
     background: conic-gradient(
-            var(--blue) 20%,
-            var(--blue-1) 30%,
-            var(--blue)  40%,
+            #0b00a1c7 0% 70%,
             var(--main-color1)70% 100%
         );
 }
 
 #donut-css-3 {
-    background: conic-gradient(var(--blue) 0% 50%,
+    background: conic-gradient(#0b00a1c7 0% 50%,
             var(--main-color1) 50% 100%);
 }
 
 #donut-javascript {
-    background: conic-gradient(var(--blue) 0% 50%,
+    background: conic-gradient(#0b00a1c7 0% 50%,
             var(--main-color1) 50% 100%);
 }
 
 #donut-github {
-    background: conic-gradient(var(--blue) 0% 45%,
+    background: conic-gradient(#0b00a1c7 0% 45%,
             var(--main-color1) 45% 100%);
 }
 
 #donut-git {
-    background: conic-gradient(var(--blue) 0% 40%,
+    background: conic-gradient(#0b00a1c7 0% 40%,
             var(--main-color1) 40% 100%);
 }
 
 #donut-inglês {
-    background: conic-gradient(var(--blue) 0% 40%,
+    background: conic-gradient(#0b00a1c7 0% 40%,
             var(--main-color1) 40% 100%);
 }
 
 #donut-scrum {
-    background: conic-gradient(var(--blue) 0% 40%,
+    background: conic-gradient(#0b00a1c7 0% 40%,
             var(--main-color1) 40% 100%);
 }
 
 #donut-react {
-    background: conic-gradient(var(--blue) 0% 33%,
+    background: conic-gradient(#0b00a1c7 0% 33%,
             var(--main-color1) 33% 100%);
 }
 
 #donut-figma {
-    background: conic-gradient(var(--blue) 0% 33%,
+    background: conic-gradient(#0b00a1c7 0% 33%,
             var(--main-color1) 33% 100%);
 }
 
 #donut-nodejs {
-    background: conic-gradient(var(--blue) 0% 33%,
+    background: conic-gradient(#0b00a1c7 0% 33%,
             var(--main-color1) 33% 100%);
 }
 
 
 #donut-mysql {
-    background: conic-gradient(var(--blue) 0% 25%,
+    background: conic-gradient(#0b00a1c7 0% 25%,
             var(--main-color1) 25% 100%);
 }
 
 #donut-python {
-    background: conic-gradient(var(--blue) 0% 22%,
+    background: conic-gradient(#0b00a1c7 0% 22%,
             var(--main-color1) 22% 100%);
 }
 
 #donut-java {
-    background: conic-gradient(var(--blue) 0% 20%,
+    background: conic-gradient(#0b00a1c7 0% 20%,
             var(--main-color1) 20% 100%);
 }
 
 #donut-csharp {
-    background: conic-gradient(var(--blue) 0% 18%,
+    background: conic-gradient(#0b00a1c7 0% 18%,
             var(--main-color1) 18% 100%);
 }
 

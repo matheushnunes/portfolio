@@ -50,4 +50,8 @@
     }
 }
 
-
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}

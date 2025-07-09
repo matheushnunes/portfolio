@@ -17,7 +17,7 @@ export default function Principal() {
                     <h3 className="flex-right typing-effect-bottom" id="apresentation-title-h3"><span className="color-blue">&lt;</span>Desenvolvedor Front-end<span className="color-blue">/&gt;</span></h3>
                 </div>
             </section>
-            <section className="about-me">
+            <section className="about-me" id="about-me">
                 <h2 className="section-title-h2">Sobre mim</h2>
                 <div className="container-space-between">
                     <p className="text-about">
@@ -34,12 +34,13 @@ export default function Principal() {
                 </div>
                 <span className="about-background">&lt;/&gt;</span>
             </section>
-            <section className="skills">
+            <section className="skills" id="skills" ref={sectionSkills}>
                 <h2 className="section-title-h2">Habilidades</h2>
                 <div className="container-skills">
                     {
                         skills.map((skill, idx) => (
                             <div className="skill" key={idx}>
+                                <div className="progress-bar"></div>
                                 <div className="donut" id={"donut-" + skill.label.replace(" ", "-").replace("#", "sharp").toLowerCase()}></div>
                                 <div className="content">
                                     <img src={skill.img} alt={skill.alt} />
