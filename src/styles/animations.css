@@ -44,6 +44,7 @@
     }
 }
 
+
 @keyframes slideUp {
     to {
         transform: translateY(0);
@@ -55,3 +56,12 @@
         transform: rotate(360deg);
     }
 }
+/* 
+@keyframes traslate-right-to-left {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+} */

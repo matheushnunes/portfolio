@@ -2,11 +2,42 @@ import Project from "./project.jsx"
 
 import { skills } from "../data/skills.js"
 import { projects } from "../data/projects.js"
-import { useState } from "react"
-import ProjectDetails from "./projectDetails.jsx"
+import { useScroll } from "./SrollContext.jsx"
+import { useEffect, useState } from "react"
 
 export default function Principal() {
-    const [modalContent, setModalContent] = useState({})
+    const [isVisible, setIsVisible] = useState(false);
+    const {
+        sectionAbout,
+        sectionSkills,
+        sectionProjects,
+        sectionContact,
+        scrollTo
+    } = useScroll()
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setIsVisible(true);
+                        observer.unobserve(entry.target);
+                    }
+                })
+            },
+            { threshold: 0.2 } // quando 20% do elemento está visível
+        )
+
+        if (sectionAbout.current) {
+            observer.observe(sectionAbout.current);
+        }
+
+        return () => {
+            if (sectionAbout.current) {
+                observer.unobserve(sectionAbout.current);
+            }
+        }
+    },[])
 
     return (
         <main>
@@ -17,7 +48,11 @@ export default function Principal() {
                     <h3 className="flex-right typing-effect-bottom" id="apresentation-title-h3"><span className="color-blue">&lt;</span>Desenvolvedor Front-end<span className="color-blue">/&gt;</span></h3>
                 </div>
             </section>
-            <section className="about-me" id="about-me">
+            <section
+                className={`about-me ${isVisible ? 'visible' : ''}`}
+                id="about-me"
+                ref={sectionAbout}
+            >
                 <h2 className="section-title-h2">Sobre mim</h2>
                 <div className="container-space-between">
                     <p className="text-about">
@@ -28,7 +63,12 @@ export default function Principal() {
                             <a href="../src/assets/files/cv_matheus_henrique.pdf" download={"cv_matheus_henrique.pdf"}><span>Baixar CV</span></a>
                         </button>
                         <button className="custom-btn btn-2">
-                            <a href="#"><span>Entre em Contato</span></a>
+                            <a onClick={(e) => {
+                                e.preventDefault()
+                                scrollTo(sectionContact)
+                            }}>
+                                <span>Entre em Contato</span>
+                            </a>
                         </button>
                     </div>
                 </div>
@@ -51,53 +91,53 @@ export default function Principal() {
                     }
                 </div>
             </section>
-            <section className="projects">
+            <section className="projects" id="projects" ref={sectionProjects}>
                 <h2 className="section-title-h2">Projetos</h2>
                 <div className="container-projects">
                     {
                         projects.map((project, idx) => (
                             <Project
                                 key={idx}
-                                projectData = {project}
+                                projectData={project}
                             />
                         ))
                     }
                 </div>
             </section>
-            <section className="contacts">
+            <section className="contacts" id="contact" ref={sectionContact}>
                 <h2 className="section-title-h2">Contato</h2>
                 <div className="container-contacts">
                     <div className="contact">
-                            <a href="mailto:matheushnunes2005@gmail.com">
-                                <button className="btn-3">
-                                    <img src="/src/assets/images/ico_mail.svg" alt="Icone email"/>
-                                </button>
-                                <p>matheushnunes2005@gmail.com</p>
-                            </a>
+                        <a href="mailto:matheushnunes2005@gmail.com">
+                            <button className="btn-3">
+                                <img src="/src/assets/images/ico_mail.svg" alt="Icone email" />
+                            </button>
+                            <p>matheushnunes2005@gmail.com</p>
+                        </a>
                     </div>
                     <div className="contact">
-                            <a href="https://wa.me/5562994721231" target="_blank">
-                                <button>
-                                    <img src="/src/assets/images/ico_telephone.svg" alt="Icone telefone"/>
-                                </button>
-                                <p>(62) 99472-1231</p>
-                            </a>
+                        <a href="https://wa.me/5562994721231" target="_blank">
+                            <button>
+                                <img src="/src/assets/images/ico_telephone.svg" alt="Icone telefone" />
+                            </button>
+                            <p>(62) 99472-1231</p>
+                        </a>
                     </div>
                     <div className="contact">
-                            <a href="https://github.com/matheushnunes" target="_blank">
-                                <button>
-                                    <img src="/src/assets/images/logo_gitHub.png" alt="Icone gitHub"/>
-                                </button>
-                                <p>matheushnunes</p>
-                            </a>
+                        <a href="https://github.com/matheushnunes" target="_blank">
+                            <button>
+                                <img src="/src/assets/images/logo_gitHub.png" alt="Icone gitHub" />
+                            </button>
+                            <p>matheushnunes</p>
+                        </a>
                     </div>
                     <div className="contact">
-                            <a href="https://www.linkedin.com/in/matheus-henrique-nunes-a4988027a/" target="_blank">
-                                <button>
-                                    <img src="/src/assets/images/ico_linkedin.png" alt="Icone linkedin"/>
-                                </button>
-                                <p>Matheus Henrique Nunes</p>
-                            </a>
+                        <a href="https://www.linkedin.com/in/matheus-henrique-nunes-a4988027a/" target="_blank">
+                            <button>
+                                <img src="/src/assets/images/ico_linkedin.png" alt="Icone linkedin" />
+                            </button>
+                            <p>Matheus Henrique Nunes</p>
+                        </a>
                     </div>
                 </div>
             </section>
