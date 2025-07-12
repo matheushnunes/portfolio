@@ -14,14 +14,12 @@ export default function Header({
         setIsDarkTheme(!isDarkTheme);
     }
 
-
     return (
         <header>
             <nav>
                 <a onClick={(e) => {
                     e.preventDefault()
                     goToSectionAbout()
-
                 }} className="links-nav" href="#about-me">Sobre</a>
                 <a onClick={(e) => {
                     e.preventDefault()

@@ -3,10 +3,12 @@ import Project from "./project.jsx"
 import { skills } from "../data/skills.js"
 import { projects } from "../data/projects.js"
 import { useScroll } from "./SrollContext.jsx"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 
 export default function Principal() {
-    const [isVisible, setIsVisible] = useState(false);
+    const refs = useRef([]);
+    const [visebleSections, setVisebleSections] = useState({});
+
     const {
         sectionAbout,
         sectionSkills,
@@ -16,28 +18,42 @@ export default function Principal() {
     } = useScroll()
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        setIsVisible(true);
-                        observer.unobserve(entry.target);
-                    }
-                })
-            },
+        // verificar se o elemento está visível
+        // para executar a animação
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setVisebleSections(prev => ({
+                        ...prev,
+                        [entry.target.id]: true
+                    }));
+                    obs.unobserve(entry.target);
+                }
+            })
+        },
             { threshold: 0.2 } // quando 20% do elemento está visível
         )
 
-        if (sectionAbout.current) {
-            observer.observe(sectionAbout.current);
-        }
+        refs.current.forEach(ref => {
+            if (ref) {
+                observer.observe(ref);
+            }
+        })
 
         return () => {
-            if (sectionAbout.current) {
-                observer.unobserve(sectionAbout.current);
-            }
+            refs.current.forEach(ref => {
+                if (ref) {
+                    observer.unobserve(ref);
+                }
+            })
+            observer.disconnect();
         }
-    },[])
+    }, [])
+    const setRef = el => {
+        if (el && !refs.current.includes(el)) {
+            refs.current.push(el);
+        }
+    }
 
     return (
         <main>

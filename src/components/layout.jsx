@@ -10,12 +10,9 @@ export default function Layout() {
     const sectionContact = useRef(null);
 
     const scrollTo = (ref) => {
-        let block = 'start';
-
-
         ref.current.scrollIntoView({
             behavior: 'smooth',
-            block: block,
+            block: 'start',
         });
     }
 
