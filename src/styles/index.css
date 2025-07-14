@@ -279,13 +279,11 @@ h1 {
     padding: 5rem;
     text-align: center;
     height: 100vh;
-    background: linear-gradient(
-        to bottom,
-        #30303000 0%,
-        var(--main-color1) 20%,
-        var(--main-color1) 83%,
-        #30303000 97%
-    );
+    background: linear-gradient(to bottom,
+            #30303000 0%,
+            var(--main-color1) 20%,
+            var(--main-color1) 83%,
+            #30303000 97%);
     transition: opacity 1s ease, transform 1s ease;
 
     .text-about {
@@ -301,13 +299,13 @@ h1 {
 
 .about-me.visible {
     .text-about {
-        transition: opacity 1s ease, transform 1.4s ease;
+        transition: opacity 1s ease .3s, transform 1.4s ease .3s;
         opacity: 1;
         transform: translateX(0);
     }
 
     .buttons-about-me {
-        transition: opacity 1s ease, transform 1.4s ease;
+        transition: opacity 1s ease .3s, transform 1.4s ease .3s;
         opacity: 1;
         transform: translateX(0);
     }
@@ -370,6 +368,7 @@ h1 {
             var(--main-color-1) 40%,
             var(--main-color-1) 70%,
             transparent 100%);
+
 }
 
 .container-skills {
@@ -379,49 +378,150 @@ h1 {
     padding: 1.5rem;
     text-align: center;
     gap: 5rem;
+
+    overflow: hidden;
+    .skill {
+        opacity: 0;
+        transform: translateX(50%);
+    }
 }
 
+#skills.visible {
+    .skill:nth-of-type(1) {
+        transition: opacity 1s ease, transform 1s ease;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(2) {
+        transition: opacity 1s ease .3s, transform 1s ease .3s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(3) {
+        transition: opacity 1s ease .6s, transform 1s ease .6s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(4) {
+        transition: opacity 1s ease .9s, transform 1s ease .9s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(5) {
+        transition: opacity 1s ease 1.2s, transform 1s ease 1.2s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(6) {
+        transition: opacity 1s ease 1.5s, transform 1s ease 1.5s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(7) {
+        transition: opacity 1s ease 1.8s, transform 1s ease 1.8s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(8) {
+        transition: opacity 1s ease 2.1s, transform 1s ease 2.1s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(9) {
+        transition: opacity 1s ease 2.4s, transform 1s ease 2.4s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(10) {
+        transition: opacity 1s ease 2.7s, transform 1s ease 2.7s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(11) {
+        transition: opacity 1s ease 3s, transform 1s ease 3s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(12) {
+        transition: opacity 1s ease 3.3s, transform 1s ease 3.3s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(13) {
+        transition: opacity 1s ease 3.6s, transform 1s ease 3.6s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(14) {
+        transition: opacity 1s ease 3.9s, transform 1s ease 3.9s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+/* CSS Atualizado */
 .skill {
     width: 150px;
     height: 150px;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    /* Removido overflow: hidden daqui */
 }
 
-.skill img {
-    width: 5rem;
-    margin-bottom: .4rem;
+.progress-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden; /* Movido para este container específico */
+    z-index: 0;
 }
 
 .progress-bar {
-    width: 98%;
-    height: 98%;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);;
     border-radius: 50%;
-    background: conic-gradient(transparent 0% 10%,
-            white 15% 25%,
-            transparent 30% 100%);
+    background: conic-gradient(
+        transparent 0% 15%,
+        rgba(255, 255, 255, 0.9) 20% 25%,
+        transparent 30% 100%
+    );
     position: absolute;
-    top: 1px;
-    left: 1px;
-    rotate: -90deg;
-    overflow: hidden;
-    animation: infinite linear rotate 1s;
+    top: 2px;
+    left: 2px;
+    transform: rotate(-90deg);
+    animation: rotate 1s linear infinite;
 }
 
 .donut {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: conic-gradient(#0b00a1c7 0% 30%,
-            /* Cor do progresso */
-            var(--main-color1) 30% 100%
-            /* Cor do fundo */
-        );
+    background: conic-gradient(
+        #0b00a1c7 0% 30%,
+        var(--main-color1) 30% 100%
+    );
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
 }
 
 .donut::before {
@@ -430,8 +530,8 @@ h1 {
     position: absolute;
     top: 10px;
     left: 10px;
-    width: 130px;
-    height: 130px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
     background: var(--main-color);
     border-radius: 50%;
 }
@@ -442,8 +542,13 @@ h1 {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     height: 8.5rem;
+}
+
+.skill img {
+    width: 5rem;
+    margin-bottom: 0.4rem;
 }
 
 #donut-html-5 {
@@ -517,7 +622,7 @@ h1 {
             var(--main-color1) 18% 100%);
 }
 
-.projects {
+#projects {
     padding-top: 7rem;
     margin-bottom: 5rem;
 }
@@ -528,10 +633,13 @@ h1 {
     flex-direction: column;
     align-items: flex-start;
     padding: 2rem;
+    overflow: hidden;
 }
 
 .project:nth-child(2n) {
     align-self: flex-end;
+    border-image: linear-gradient(to left, var(--blue)50%, var(--yellow)) 1;
+    transform: translate(50%);
 
     .container-project {
         flex-direction: row-reverse;
@@ -539,10 +647,17 @@ h1 {
 }
 
 .project {
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(to right, var(--blue) 50%, var(--yellow)) 1;
+    border-radius: 5px;
     background-color: var(--main-color1);
     padding: 2rem;
     max-width: 100rem;
     margin-bottom: 8rem;
+    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.247);
+    opacity: 0;
+    transform: translate(-50%);
+    overflow: hidden;
 
     h3 {
         font: bold 2.7rem "times new roman", sans-serif;
@@ -614,6 +729,12 @@ h1 {
     }
 }
 
+.project.visible {
+    transition: opacity 1s ease, transform 1s ease;
+    opacity: 1;
+    transform: translateX(0);
+}
+
 
 .contacts {
     display: flex;
@@ -629,6 +750,8 @@ h1 {
         justify-content: space-between;
         padding: 2rem;
         gap: 2rem;
+        transform: translateY(50%);
+        opacity: 0;
     }
 
     .contact a {
@@ -654,6 +777,14 @@ h1 {
     .contact button:hover {
         background-color: var(--blue-1);
         transition: .3s;
+    }
+}
+
+.contacts.visible {
+    .container-contacts {
+        transition: opacity 1s ease .2s, transform 1s ease .2s;
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 

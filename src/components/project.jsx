@@ -1,10 +1,14 @@
 import { useNavigate } from 'react-router-dom'
 
-export default function Project ({projectData}) {
+export default function Project ({projectData, ref, className}) {
     const navigate = useNavigate()
 
     return (
-        <div className="project">
+        <div
+            ref={ref}
+            className={`project ${className}`}
+            id={projectData.id}
+        >
             <h3>{projectData.title}</h3>
             <div className="container-project">
                 <div className="container-img-project">

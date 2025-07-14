@@ -2,12 +2,13 @@ import Project from "./project.jsx"
 
 import { skills } from "../data/skills.js"
 import { projects } from "../data/projects.js"
-import { useScroll } from "./SrollContext.jsx"
+import { useScrollAnimation } from "../hooks/useScrollAnimation.jsx"
+import { useScroll } from "../hooks/SrollContext.jsx"
 import { useEffect, useState, useRef } from "react"
 
 export default function Principal() {
     const refs = useRef([]);
-    const [visebleSections, setVisebleSections] = useState({});
+    const [setRef, visible] = useScrollAnimation({ threshold: 0.2 });
 
     const {
         sectionAbout,
@@ -16,44 +17,6 @@ export default function Principal() {
         sectionContact,
         scrollTo
     } = useScroll()
-
-    useEffect(() => {
-        // verificar se o elemento está visível
-        // para executar a animação
-        const observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setVisebleSections(prev => ({
-                        ...prev,
-                        [entry.target.id]: true
-                    }));
-                    obs.unobserve(entry.target);
-                }
-            })
-        },
-            { threshold: 0.2 } // quando 20% do elemento está visível
-        )
-
-        refs.current.forEach(ref => {
-            if (ref) {
-                observer.observe(ref);
-            }
-        })
-
-        return () => {
-            refs.current.forEach(ref => {
-                if (ref) {
-                    observer.unobserve(ref);
-                }
-            })
-            observer.disconnect();
-        }
-    }, [])
-    const setRef = el => {
-        if (el && !refs.current.includes(el)) {
-            refs.current.push(el);
-        }
-    }
 
     return (
         <main>
@@ -65,9 +28,9 @@ export default function Principal() {
                 </div>
             </section>
             <section
-                className={`about-me ${isVisible ? 'visible' : ''}`}
+                className={`about-me ${visible['about-me'] ? "visible" : ""}`}
                 id="about-me"
-                ref={sectionAbout}
+                ref={setRef}
             >
                 <h2 className="section-title-h2">Sobre mim</h2>
                 <div className="container-space-between">
@@ -90,13 +53,19 @@ export default function Principal() {
                 </div>
                 <span className="about-background">&lt;/&gt;</span>
             </section>
-            <section className="skills" id="skills" ref={sectionSkills}>
+            <section
+                className={`section ${visible['skills'] ? 'visible' : ''}`}
+                id="skills"
+                ref={setRef}
+            >
                 <h2 className="section-title-h2">Habilidades</h2>
                 <div className="container-skills">
                     {
                         skills.map((skill, idx) => (
                             <div className="skill" key={idx}>
-                                <div className="progress-bar"></div>
+                                <div className="progress-container">
+                                    <div className="progress-bar"></div>
+                                </div>
                                 <div className="donut" id={"donut-" + skill.label.replace(" ", "-").replace("#", "sharp").toLowerCase()}></div>
                                 <div className="content">
                                     <img src={skill.img} alt={skill.alt} />
@@ -107,7 +76,10 @@ export default function Principal() {
                     }
                 </div>
             </section>
-            <section className="projects" id="projects" ref={sectionProjects}>
+            <section
+                className="section"
+                id="projects"
+            >
                 <h2 className="section-title-h2">Projetos</h2>
                 <div className="container-projects">
                     {
@@ -115,12 +87,18 @@ export default function Principal() {
                             <Project
                                 key={idx}
                                 projectData={project}
+                                ref={setRef}
+                                className={`${visible[project.id] ? 'visible' : ''}`}
                             />
                         ))
                     }
                 </div>
             </section>
-            <section className="contacts" id="contact" ref={sectionContact}>
+            <section
+                className={`contacts ${visible['contact'] ? 'visible' : ''}`}
+                id="contact"
+                ref={setRef}
+            >
                 <h2 className="section-title-h2">Contato</h2>
                 <div className="container-contacts">
                     <div className="contact">

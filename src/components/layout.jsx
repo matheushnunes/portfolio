@@ -1,7 +1,7 @@
 import Header from './header.jsx';
 import { Outlet } from 'react-router-dom';
 import { useRef } from 'react';
-import { ScrollContext } from './SrollContext.jsx';
+import { ScrollContext } from '../hooks/SrollContext.jsx';
 
 export default function Layout() {
     const sectionAbout = useRef(null);

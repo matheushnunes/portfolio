@@ -1,5 +1,6 @@
 export const projects = [
     {
+        id: "sga_online",
         title: "SGA Online",
         heroImage: "../src/assets/images/sga_online/desktop/dashboard_sga_online.png",
         imagePath: "sga_online",
@@ -10,6 +11,7 @@ export const projects = [
         technologies: ["HTML 5", "CSS 3", "JavaScript", "Node.js", "PostgreSQL 17", "Figma", "Neon DB (para hospedagem do banco de dados)"]
     },
     {
+        id: "tabuada",
         title: "Tabuada",
         heroImage: "../src/assets/images/tabuada/desktop/home_page_tabuada.png",
         imagePath: "tabuada",
@@ -20,6 +22,7 @@ export const projects = [
         technologies: ["React 19", "CSS 3", "JavaScript", "Figma"]
     },
     {
+        id: "cxc",
         title: "Conex Consult",
         heroImage: "../src/assets/images/cxc/desktop/home_page_cxc.png",
         imagePath: "cxc",

@@ -52,16 +52,10 @@
 }
 
 @keyframes rotate {
+    from {
+        transform: rotate(-90deg);
+    }
     to {
-        transform: rotate(360deg);
+        transform: rotate(270deg);
     }
 }
-/* 
-@keyframes traslate-right-to-left {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-} */
