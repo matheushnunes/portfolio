@@ -19,8 +19,11 @@
     }
 
     ul {
-        list-style: circle;
+        list-style: disc;
         margin-left: 2rem;
+        li::marker {
+            color: var(--yellow);
+        }
     }
 
     li {
@@ -59,6 +62,9 @@
         display: flex;
         flex-direction: column;
         gap: 3rem;
+        background-color: var(--main-color1);
+        padding: 2rem;
+        border-radius: 5px;
     }
 
     .technologies-list {

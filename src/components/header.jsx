@@ -8,37 +8,46 @@ export default function Header({
     goToSectionProjects,
     goToSectionContact
 }) {
+    const root = document.documentElement;
     const [isDarkTheme, setIsDarkTheme] = useState(true);
 
+    root.classList.add("dark-mode")
+    
     function toggleTheme(e) {
+
         setIsDarkTheme(!isDarkTheme);
+
+        if (isDarkTheme) {
+            root.classList.remove("dark-mode");
+            root.classList.add("light-mode");
+        } else {
+            root.classList.remove("light-mode");
+            root.classList.add("dark-mode");
+        }
     }
 
     return (
         <header>
             <nav>
-                <a onClick={(e) => {
-                    e.preventDefault()
-                    goToSectionAbout()
-                }} className="links-nav" href="#about-me">Sobre</a>
-                <a onClick={(e) => {
-                    e.preventDefault()
-                    goToSectionSkills()
-                }} className="links-nav" href="#skills">Habilidades</a>
-                <a onClick={(e) => {
-                    e.preventDefault()
-                    goToSectionProjects()
-                }} className="links-nav" href="#">Projetos</a>
-                <a onClick={(e) => {
-                    e.preventDefault()
-                    goToSectionContact()
-
-                }} className="links-nav" href="#">Contato</a>
+                <a className="links-nav" href="#about-me">Sobre</a>
+                <a className="links-nav" href="#skills">Habilidades</a>
+                <a className="links-nav" href="#projects">Projetos</a>
+                <a className="links-nav" href="#contact">Contato</a>
             </nav>
-            <button className="toggle-theme" onClick={toggleTheme}>
+            <button className={`toggle-theme ${isDarkTheme ? "dark-mode" : "light-mode" }`} onClick={toggleTheme}>
                 <div className="container-ico-theme">
-                    <img src={icoLight} alt="icone tema claro" className="ico-theme" />
-                    <img src={icoDark} alt="icone tema escuro" className="ico-theme" />
+                    <img
+                        id="ico-theme-light"
+                        src={icoLight}
+                        alt="icone tema claro"
+                        className="ico-theme"
+                    />
+                    <img
+                        id="ico-theme-dark"
+                        src={icoDark}
+                        alt="icone tema escuro"
+                        className="ico-theme"
+                    />
                 </div>
                 <input
                     id="toggle-switch"

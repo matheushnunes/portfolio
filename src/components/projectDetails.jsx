@@ -35,7 +35,7 @@ export default function ProjectDetails () {
                         <ul className="technologies-list">
                             {projectData.technologies.map((technology, index) => <li key={index}>{technology}</li>)}
                         </ul>
-                        <div className="container-space-between">
+                        <div className="container-space-between margin-top-auto">
                             <button className="custom-btn btn-2">
                                 <a href={projectData.projectLink} target="_blank" rel="external"><span>Acessar Projeto</span></a>
                             </button>

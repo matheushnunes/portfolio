@@ -3,20 +3,9 @@ import Project from "./project.jsx"
 import { skills } from "../data/skills.js"
 import { projects } from "../data/projects.js"
 import { useScrollAnimation } from "../hooks/useScrollAnimation.jsx"
-import { useScroll } from "../hooks/SrollContext.jsx"
-import { useEffect, useState, useRef } from "react"
 
 export default function Principal() {
-    const refs = useRef([]);
-    const [setRef, visible] = useScrollAnimation({ threshold: 0.2 });
-
-    const {
-        sectionAbout,
-        sectionSkills,
-        sectionProjects,
-        sectionContact,
-        scrollTo
-    } = useScroll()
+    const [registerElement, visible] = useScrollAnimation();
 
     return (
         <main>
@@ -30,7 +19,7 @@ export default function Principal() {
             <section
                 className={`about-me ${visible['about-me'] ? "visible" : ""}`}
                 id="about-me"
-                ref={setRef}
+                ref={el => registerElement(el, 0.6)}
             >
                 <h2 className="section-title-h2">Sobre mim</h2>
                 <div className="container-space-between">
@@ -56,7 +45,7 @@ export default function Principal() {
             <section
                 className={`section ${visible['skills'] ? 'visible' : ''}`}
                 id="skills"
-                ref={setRef}
+                ref={el => registerElement(el, 0.4)}
             >
                 <h2 className="section-title-h2">Habilidades</h2>
                 <div className="container-skills">
@@ -87,7 +76,7 @@ export default function Principal() {
                             <Project
                                 key={idx}
                                 projectData={project}
-                                ref={setRef}
+                                ref={el => registerElement(el, 0.2)}
                                 className={`${visible[project.id] ? 'visible' : ''}`}
                             />
                         ))
@@ -97,7 +86,7 @@ export default function Principal() {
             <section
                 className={`contacts ${visible['contact'] ? 'visible' : ''}`}
                 id="contact"
-                ref={setRef}
+                ref={el => registerElement(el, 0.4)}
             >
                 <h2 className="section-title-h2">Contato</h2>
                 <div className="container-contacts">
