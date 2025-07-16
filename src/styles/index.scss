@@ -75,8 +75,7 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 120rem;
-    z-index: 2;
+    gap: 1rem;
 }
 
 .margin-top-auto {
@@ -239,7 +238,7 @@ main section {
 
 h1 {
     text-align: center;
-    font: bolder 7rem "Audiowide", sans-serif;
+    font: bolder clamp(2rem, 7vw, 7rem) "Audiowide", sans-serif;
     margin: 0;
     overflow: hidden;
     text-wrap: nowrap;
@@ -271,7 +270,7 @@ h1 {
     /* Inicia transparente */
     width: 0;
     animation:
-        typing-top 3s steps(40, end) forwards,
+        typing-top 3.2s steps(40, end) forwards,
         blink-caret 1s step-end 2s,
         /* Só pisca durante 3s */
         hide-caret 1.6s step-end forwards;
@@ -285,7 +284,7 @@ h1 {
     /* Inicia transparente */
     width: 0;
     animation:
-        typing-bottom 2s steps(40, end) forwards,
+        typing-bottom 3s steps(40, end) forwards,
         blink-caret 1s step-end infinite;
     /* Só pisca durante 3s */
     animation-delay: 3s;
@@ -293,13 +292,13 @@ h1 {
 
 #apresentation-title-h2 {
     display: block;
-    font: bold 6.2rem times;
+    font: bold clamp(2rem, 5vw, 5rem) times;
     width: 40%;
     color: var(--text-color);
 }
 
 #apresentation-title-h3 {
-    font: bold 2.7rem "Roboto Mono", monospace;
+    font: bold clamp(1rem, 3vw, 3rem) "Roboto Mono", monospace;
     color: var(--text-color);
 }
 
@@ -352,6 +351,14 @@ h1 {
     }
 }
 
+.container-about-text-btn {
+    container: about-text-btn / inline-size;
+    max-width: 120rem;
+    z-index: 2;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
 .text-about {
     max-width: 48rem;
     text-align: justify;
@@ -361,7 +368,8 @@ h1 {
 
 .buttons-about-me {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 18rem;
@@ -711,7 +719,7 @@ h1 {
 
     .container-project {
         display: flex;
-        gap: 6rem;
+        gap: 3rem;
         margin-bottom: 3rem;
     }
 
@@ -761,6 +769,7 @@ h1 {
         flex-direction: column;
         justify-content: space-between;
         gap: 2rem;
+        max-width: 400px;
     }
 
     .info-project .btn-2 {
@@ -802,6 +811,7 @@ h1 {
         flex-direction: column;
         align-items: center;
         gap: 2rem;
+        text-wrap: nowrap;
     }
 
     .contact img {
@@ -835,6 +845,7 @@ h1 {
 .custom-btn {
     max-width: 20rem;
     width: 100%;
+    min-width: fit-content;
     height: 40px;
     color: #fff;
     border-radius: 5px;
@@ -848,16 +859,22 @@ h1 {
     font-size: 1.6rem;
 }
 
+.custom-btn span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .btn-2 {
     background: var(--blue);
     line-height: 42px;
-    padding: 0;
+    padding: 1rem;
     border: none;
 }
 
 .btn-2 span {
     position: relative;
-    display: block;
     width: 100%;
     height: 100%;
 }

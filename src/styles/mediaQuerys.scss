@@ -1,0 +1,30 @@
+@media screen and (max-width: 802px) {
+    .container-about-text-btn {
+        justify-content: center;
+    }
+    .buttons-about-me {
+        width: 100%;
+        max-width: 48rem;
+    }
+}
+
+@media screen and (max-width: 915px) {
+    .project {
+        .container-project {
+            flex-flow: column;
+            align-items: center;
+        }
+        .info-project {
+            width: 100% !important;
+            max-width: 500px !important;
+        }
+        .project:nth-child(2n) .container-project {
+            flex-direction: column !important;
+        }
+    }
+
+    .container-contacts {
+        width: 100% !important;
+    }
+
+}

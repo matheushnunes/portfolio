@@ -22,7 +22,7 @@ export default function Principal() {
                 ref={el => registerElement(el, 0.6)}
             >
                 <h2 className="section-title-h2">Sobre mim</h2>
-                <div className="container-space-between">
+                <div className="container-space-between container-about-text-btn">
                     <p className="text-about">
                         Estudo desenvolvimento de software desde 2021 e, atualmente, curso <strong>Análise e Desenvolvimento de Sistemas</strong>. As tecnologias que mais domino são <strong>JavaScript, HTML e CSS</strong>. Estou atuando como desenvolvedor full-stack em um projeto acadêmico em equipe e estou sempre buscando evoluir como profissional.
                     </p>
@@ -90,7 +90,7 @@ export default function Principal() {
             >
                 <h2 className="section-title-h2">Contato</h2>
                 <div className="container-contacts">
-                    <div className="contact">
+                    <div className="contact" id="contact-email">
                         <a href="mailto:matheushnunes2005@gmail.com">
                             <button className="btn-3">
                                 <img src="/src/assets/images/ico_mail.svg" alt="Icone email" />
