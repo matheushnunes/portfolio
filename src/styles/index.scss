@@ -19,6 +19,7 @@
     font-size: 0.625rem;
     /* 10px */
 }
+
 :root.light-mode {
     --main-color: #d8d8d8;
     --main-color-1: #f0f0f0;
@@ -33,6 +34,11 @@
 
     font-size: 0.625rem;
     /* 10px */
+}
+.light-mode {
+    .menu-hamburguer {
+        filter: invert(0);
+    }
 }
 
 ::-webkit-scrollbar {
@@ -114,6 +120,13 @@ nav a {
 nav a:hover {
     color: var(--yellow);
     transition: .3s;
+}
+
+.menu-hamburguer {
+    display: none;
+}
+.close-button {
+    display: none;
 }
 
 input[type="checkbox"] {
@@ -412,13 +425,11 @@ h1 {
     flex-direction: column;
     align-items: center;
     padding: 10rem 1.5rem 15rem 1.5rem;
-    background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        var(--main-color-1) 40%,
-        var(--main-color-1) 70%,
-        transparent 100%
-    );
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            var(--main-color-1) 40%,
+            var(--main-color-1) 70%,
+            transparent 100%);
 
 }
 
@@ -431,6 +442,7 @@ h1 {
     gap: 5rem;
 
     overflow: hidden;
+
     .skill {
         opacity: 0;
         transform: translateX(50%);
@@ -541,19 +553,19 @@ h1 {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    overflow: hidden; /* Movido para este container específico */
+    overflow: hidden;
+    /* Movido para este container específico */
     z-index: 0;
 }
 
 .progress-bar {
     width: calc(100% - 4px);
-    height: calc(100% - 4px);;
+    height: calc(100% - 4px);
+    ;
     border-radius: 50%;
-    background: conic-gradient(
-        transparent 0% 15%,
-        var(--text-color) 20% 25%,
-        transparent 30% 100%
-    );
+    background: conic-gradient(transparent 0% 15%,
+            var(--text-color) 20% 25%,
+            transparent 30% 100%);
     position: absolute;
     top: 2px;
     left: 2px;
@@ -565,10 +577,8 @@ h1 {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: conic-gradient(
-        #0b00a1c7 0% 30%,
-        var(--main-color1) 30% 100%
-    );
+    background: conic-gradient(#0b00a1c7 0% 30%,
+            var(--main-color1) 30% 100%);
     position: absolute;
     top: 0;
     left: 0;
@@ -799,11 +809,16 @@ h1 {
         display: flex;
         flex-direction: row;
         align-items: center;
+        flex-wrap: wrap;
         justify-content: space-between;
         padding: 2rem;
         gap: 2rem;
         transform: translateY(50%);
         opacity: 0;
+    }
+
+    .contact {
+        width: 200px;
     }
 
     .contact a {
