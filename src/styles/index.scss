@@ -122,10 +122,7 @@ nav a:hover {
     transition: .3s;
 }
 
-.menu-hamburguer {
-    display: none;
-}
-.close-button {
+.btn-menu-hamburguer {
     display: none;
 }
 
@@ -153,11 +150,17 @@ input[type="checkbox"] {
     #ico-theme-dark {
         opacity: 0.3;
     }
+    .btn-menu-hamburguer {
+        filter: invert(0);
+    }
 }
 
 .dark-mode {
     #ico-theme-light {
         opacity: 0.3;
+    }
+    .btn-menu-hamburgu {
+        filter: invert(1);
     }
 }
 
@@ -268,12 +271,12 @@ h1 {
     -webkit-text-fill-color: transparent;
     transform: translateY(100vh);
     animation: slideUp 1.5s ease-out forwards;
-    animation-delay: .7s;
+    animation-delay: .5s;
 }
 
 .h1-henrique {
     transform: translateY(-100vh);
-    animation-delay: 1.5s;
+    animation-delay: 1s;
 }
 
 .typing-effect-top {
@@ -283,7 +286,7 @@ h1 {
     /* Inicia transparente */
     width: 0;
     animation:
-        typing-top 3.2s steps(40, end) forwards,
+        typing-top 3.5s steps(40, end) forwards,
         blink-caret 1s step-end 2s,
         /* Só pisca durante 3s */
         hide-caret 1.6s step-end forwards;

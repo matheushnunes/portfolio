@@ -8,6 +8,8 @@ export default function Header() {
     const root = document.documentElement;
     const [isDarkTheme, setIsDarkTheme] = useState(true);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const dropdownRef = useRef(null);
+    const buttonRef = useRef(null);
 
     root.classList.add("dark-mode")
 
@@ -23,29 +25,67 @@ export default function Header() {
         }
     }
 
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target) && !buttonRef.current.contains(event.target)) {
+                setIsMenuOpen(false);
+            }
+        }
+
+        function handleEscapeKey(event) {
+            if (event.key === 'Escape') {
+                setIsMenuOpen(false);
+                buttonRef.current?.focus();
+            }
+        }
+
+        if (isMenuOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+            document.addEventListener('keydown', handleEscapeKey);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('keydown', handleEscapeKey);
+        };
+    }, [isMenuOpen]);
+
+    const handleLinkClick = () => {
+        setIsMenuOpen(false);
+    }
+
     return (
         <header>
-            {
-                isMenuOpen ?
-                <img
-                    src={closeButton}
-                    alt="botão fechar menu"
-                    className="close-button"
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                /> :
-                <img
-                    src={icoMenu}
-                    alt="menu hamburguer"
-                    className="menu-hamburguer"
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                />
-            }
-
-            <nav className={`nav-sections ${isMenuOpen ? "menu-open" : ""}`}>
-                <a className="links-nav" href="#about-me">Sobre</a>
-                <a className="links-nav" href="#skills">Habilidades</a>
-                <a className="links-nav" href="#projects">Projetos</a>
-                <a className="links-nav" href="#contact">Contato</a>
+            <button
+                ref={buttonRef}
+                aria-haspopup="true"
+                aria-expanded={isMenuOpen}
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="btn-menu-hamburguer"
+            >
+                {isMenuOpen ?
+                    <img
+                        src={closeButton}
+                        alt="botão fechar menu"
+                        className="close-button"
+                    /> :
+                    <img
+                        src={icoMenu}
+                        alt="abrir menu hamburguer"
+                        className="menu-hamburguer"
+                    />
+                }
+            </button>
+            <nav
+                ref={dropdownRef}
+                className={`nav-sections ${isMenuOpen ? "menu-open" : "menu-close"}`}
+                role="menu"
+                aria-orientation="vertical"
+            >
+                <a className="links-nav" href="#about-me" onClick={handleLinkClick}>Sobre</a>
+                <a className="links-nav" href="#skills" onClick={handleLinkClick}>Habilidades</a>
+                <a className="links-nav" href="#projects" onClick={handleLinkClick}>Projetos</a>
+                <a className="links-nav" href="#contact" onClick={handleLinkClick}>Contato</a>
             </nav>
             <button className={`toggle-theme ${isDarkTheme ? "dark-mode" : "light-mode"}`} onClick={toggleTheme}>
                 <div className="container-ico-theme">
