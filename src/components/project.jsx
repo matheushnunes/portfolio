@@ -1,4 +1,8 @@
 import { useNavigate } from 'react-router-dom'
+const images = import.meta.glob('/src/assets/images/**/*.{png,jpg,jpeg,svg}', {
+    eager: true,
+    import: 'default'
+});
 
 export default function Project ({projectData, ref, className}) {
     const navigate = useNavigate()
@@ -18,7 +22,7 @@ export default function Project ({projectData, ref, className}) {
                         Ver mais
                     </button>
                     <div className="dark-background"></div>
-                    <img src={projectData.heroImage} alt={`tela Principal do ${projectData.title}`}/>
+                    <img src={images[`/src/assets/images/${projectData.heroImageKey}`]} alt={`tela Principal do ${projectData.title}`}/>
                 </div>
                 <div className="info-project">
                     <p className="about-project">

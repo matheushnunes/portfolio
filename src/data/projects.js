@@ -2,7 +2,7 @@ export const projects = [
     {
         id: "sga_online",
         title: "SGA Online",
-        heroImage: "../src/assets/images/sga_online/desktop/dashboard_sga_online.png",
+        heroImageKey: "sga_online/desktop/dashboard_sga_online.png",
         imagePath: "sga_online",
         description: "O SGA (Sistema de Gestão Automotivo) Online é um projeto acadêmico que está sendo desenvolvido em equipe com mais quatro colegas. Nosso objetivo é criar uma versão moderna, web e responsiva de um sistema ERP desktop já utilizado por uma empresa do setor automotivo.",
         projectLink: "https://sga-web.github.io/SGA_ONLINE/Front_end/Principal/principal.html",
@@ -13,7 +13,7 @@ export const projects = [
     {
         id: "tabuada",
         title: "Tabuada",
-        heroImage: "../src/assets/images/tabuada/desktop/home_page_tabuada.png",
+        heroImageKey: "tabuada/desktop/home_page_tabuada.png",
         imagePath: "tabuada",
         description: "Um site onde é possível testar seus conhecimentos e aprender as tabuadas da matemática. Objeto principal para o desenvolvimento desse projeto foi para testar e praticar meus conhecimentos em React, pois ele é feito 100% usando React.",
         projectLink: "https://matheushnunes.github.io/projeto-tabuada/",
@@ -24,7 +24,7 @@ export const projects = [
     {
         id: "cxc",
         title: "Conex Consult",
-        heroImage: "../src/assets/images/cxc/desktop/home_page_cxc.png",
+        heroImageKey: "cxc/desktop/home_page_cxc.png",
         imagePath: "cxc",
         description: "O Conex Consult foi o primeiro projeto acadêmico do qual participei, desenvolvido em equipe no início do curso. O objetivo era criar uma plataforma web de vagas de emprego. Embora o projeto tenha sido descontinuado por questões de viabilidade, contribuiu significativamente para meu aprendizado em trabalho colaborativo e desenvolvimento web.",
         projectLink: "https://cxcconexconsult.github.io/Conex-Consult/",
