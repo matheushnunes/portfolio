@@ -18,8 +18,8 @@ export function useScrollAnimation() {
             const observer = new IntersectionObserver(
                 (entries, obs) => {
                     entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            setVisibleSections(prev => ({
+                        if (entry.isIntersecting) { // Se o elemento estiver visível
+                            setVisibleSections(prev => ({ // Atualiza o estado com o novo elemento visível
                                 ...prev,
                                 [entry.target.id]: true
                             }));

@@ -11,7 +11,7 @@ export default function Header() {
     const dropdownRef = useRef(null);
     const buttonRef = useRef(null);
 
-    root.classList.add("dark-mode")
+    if (isDarkTheme) root.classList.add("dark-mode")
 
     function toggleTheme(e) {
         setIsDarkTheme(!isDarkTheme);

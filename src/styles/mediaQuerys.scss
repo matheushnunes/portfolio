@@ -37,10 +37,30 @@
             transition: .1s ease-in-out;
         }
     }
-    main {
-        
+
+    #projects {
+        .container-projects {
+            padding: 0;
+        }
     }
 
+    #skills {
+        .container-skills {
+            gap: 2rem;
+            justify-content: space-evenly;
+        }
+        .skill {
+            width: 120px;
+            height: 120px;
+        }
+        .skill img {
+            width: 4rem;
+        }
+        .content {
+            height: 7rem;
+            font-size: 1.4rem;
+        }
+    }
 }
 
 @media screen and (max-width: 520px) {
@@ -52,6 +72,12 @@
         flex-wrap: nowrap !important;
         gap: 1rem;
     }
+
+    #projects {
+        .project {
+            margin-bottom: 4rem;
+        }
+    }
 }
 
 @media screen and (max-width: 852px) {
@@ -62,6 +88,13 @@
     .buttons-about-me {
         width: 100% !important;
         max-width: 48rem;
+    }
+
+    #projects {
+        .project {
+            border-image: linear-gradient(to right, var(--blue) 0%, var(--yellow) 45%, var(--yellow) 55%, var(--blue) 100%) 1 100%;
+            border-image-slice: 1;
+        }
     }
 }
 

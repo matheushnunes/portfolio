@@ -1,11 +1,20 @@
 import Project from "./project.jsx"
-
 import { skills } from "../data/skills.js"
 import { projects } from "../data/projects.js"
 import { useScrollAnimation } from "../hooks/useScrollAnimation.jsx"
+import { useRef } from "react";
 
 export default function Principal() {
-    const [registerElement, visible] = useScrollAnimation();
+    const [registerElement, visible] = useScrollAnimation(); // Hook personalizado para gerenciar os elementos visíveis na tela e suas respectivas classes de animação
+    const sectionAboutMe = useRef(null);
+    const sectionContact = useRef(null);
+
+    function scrollTo(ref) {
+        ref.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+        });
+    }
 
     return (
         <main>
@@ -15,11 +24,19 @@ export default function Principal() {
                     <h1><span className="h1-matheus">MATHEUS</span> <span className="h1-henrique">HENRIQUE</span></h1>
                     <h3 className="flex-right typing-effect-bottom" id="apresentation-title-h3"><span className="color-blue">&lt;</span>Desenvolvedor Front-end<span className="color-blue">/&gt;</span></h3>
                 </div>
+                <button className="btn-scroll" onClick={(e) => {
+                    scrollTo(sectionAboutMe);
+                }}>
+                    <img src="../src/assets/images/arrow.svg" alt="seta para baixo" />
+                </button>
             </section>
             <section
                 className={`about-me ${visible['about-me'] ? "visible" : ""}`}
                 id="about-me"
-                ref={el => registerElement(el, 0.6)}
+                ref={el => {
+                    sectionAboutMe.current = el;
+                    registerElement(el, 0.6)
+                }}
             >
                 <h2 className="section-title-h2">Sobre mim</h2>
                 <div className="container-space-between container-about-text-btn">
@@ -86,7 +103,10 @@ export default function Principal() {
             <section
                 className={`contacts ${visible['contact'] ? 'visible' : ''}`}
                 id="contact"
-                ref={el => registerElement(el, 0.4)}
+                ref={el => {
+                    sectionContact.current = el;
+                    registerElement(el, 0.4)
+                }}
             >
                 <h2 className="section-title-h2">Contato</h2>
                 <div className="container-contacts">

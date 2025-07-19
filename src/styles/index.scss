@@ -153,6 +153,9 @@ input[type="checkbox"] {
     .btn-menu-hamburguer {
         filter: invert(0);
     }
+    .btn-scroll img {
+        filter: brightness(.9);
+    }
 }
 
 .dark-mode {
@@ -161,6 +164,9 @@ input[type="checkbox"] {
     }
     .btn-menu-hamburgu {
         filter: invert(1);
+    }
+    .btn-scroll img {
+        filter: brightness(.1);
     }
 }
 
@@ -323,6 +329,21 @@ h1 {
     color: var(--yellow);
     margin: 0 0 8rem 0;
     z-index: 2;
+}
+
+.btn-scroll {
+    position: absolute;
+    bottom: 4rem;
+    transform: translateX(-50%);
+    transform: translateY(100vh);
+    animation: slideUp 1s ease-out forwards, junping 1s infinite;
+    animation-delay: 5s, 6s;
+}
+
+.btn-scroll img {
+    width: 40vw;
+    max-width: 300px;
+    transform: rotate(-90deg);
 }
 
 /* Seção Sobre mim */
@@ -743,7 +764,8 @@ h1 {
     }
 
     .container-img-project img {
-        width: 50rem;
+        max-width: 50rem;
+        width: 100%;
     }
 
     .see-more {
