@@ -3,15 +3,12 @@ import { skills } from "../data/skills.js"
 import { projects } from "../data/projects.js"
 import { useScrollAnimation } from "../hooks/useScrollAnimation.jsx"
 import { useRef } from "react";
-const images = import.meta.glob('/src/assets/images/**/*.{png,jpg,jpeg,svg}', {
+const images = import.meta.glob('./assets/images/**/*.{png,jpg,jpeg,svg}', {
     eager: true,
     import: 'default'
 });
 
 export default function Principal() {
-    for (let i in images) {
-        console.log(i)
-    }
     const [registerElement, visible] = useScrollAnimation(); // Hook personalizado para gerenciar os elementos visíveis na tela e suas respectivas classes de animação
     const sectionAboutMe = useRef(null);
     const sectionContact = useRef(null);
