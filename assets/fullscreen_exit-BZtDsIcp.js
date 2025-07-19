@@ -1,1 +1,0 @@
-const v="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24px'%20viewBox='0%20-960%20960%20960'%20width='24px'%20fill='%23fff'%3e%3cpath%20d='M240-120v-120H120v-80h200v200h-80Zm400%200v-200h200v80H720v120h-80ZM120-640v-80h120v-120h80v200H120Zm520%200v-200h80v120h120v80H640Z'/%3e%3c/svg%3e";export{v as default};
