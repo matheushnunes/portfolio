@@ -10,7 +10,7 @@ import App from './App.jsx'
 let root = document.getElementById('root');
 createRoot(root).render(
     <StrictMode>
-        <BrowserRouter>
+        <BrowserRouter basename='/portfolio'>
             <App />
         </BrowserRouter>
     </StrictMode>,
