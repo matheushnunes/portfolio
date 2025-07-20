@@ -79,7 +79,7 @@ export default function Principal() {
                                 </div>
                                 <div className="donut" id={"donut-" + skill.label.replace(" ", "-").replace("#", "sharp").toLowerCase()}></div>
                                 <div className="content">
-                                    <img src={images[`/src/assets/images/${skill.imgKey}`]} alt={skill.alt} />
+                                    <img src={images[`./assets/images/${skill.imgKey}`]} alt={skill.alt} />
                                     <p>{skill.label}</p>
                                 </div>
                             </div>
