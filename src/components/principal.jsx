@@ -3,12 +3,12 @@ import { skills } from "../data/skills.js"
 import { projects } from "../data/projects.js"
 import { useScrollAnimation } from "../hooks/useScrollAnimation.jsx"
 import { useRef } from "react";
-const images = import.meta.glob('./assets/images/**/*.{png,jpg,jpeg,svg}', {
+const images = import.meta.glob('../assets/images/**/*.{png,jpg,jpeg,svg}', {
     eager: true,
     import: 'default'
 });
-
 export default function Principal() {
+    console.log(images)
     const [registerElement, visible] = useScrollAnimation(); // Hook personalizado para gerenciar os elementos visíveis na tela e suas respectivas classes de animação
     const sectionAboutMe = useRef(null);
     const sectionContact = useRef(null);
@@ -32,7 +32,7 @@ export default function Principal() {
                 <button className="btn-scroll" onClick={(e) => {
                     scrollTo(sectionAboutMe);
                 }}>
-                    <img src={images["/src/assets/images/arrow.svg"]} alt="seta para baixo" />
+                    <img src={images["../assets/images/arrow.svg"]} alt="seta para baixo" />
                 </button>
             </section>
             <section
@@ -50,7 +50,7 @@ export default function Principal() {
                     </p>
                     <div className="buttons-about-me">
                         <button className="custom-btn btn-2">
-                            <a href="../src/assets/files/cv_matheus_henrique.pdf" download={"cv_matheus_henrique.pdf"}><span>Baixar CV</span></a>
+                            <a href="..../assets/files/cv_matheus_henrique.pdf" download={"cv_matheus_henrique.pdf"}><span>Baixar CV</span></a>
                         </button>
                         <button className="custom-btn btn-2">
                             <a onClick={(e) => {
@@ -79,7 +79,7 @@ export default function Principal() {
                                 </div>
                                 <div className="donut" id={"donut-" + skill.label.replace(" ", "-").replace("#", "sharp").toLowerCase()}></div>
                                 <div className="content">
-                                    <img src={images[`./assets/images/${skill.imgKey}`]} alt={skill.alt} />
+                                    <img src={images[`../assets/images/${skill.imgKey}`]} alt={skill.alt} />
                                     <p>{skill.label}</p>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@ export default function Principal() {
                         <a href="mailto:matheushnunes2005@gmail.com">
                             <button className="btn-3">
                                 <img
-                                    src={images["/src/assets/images/ico_mail.svg"]}
+                                    src={images["../assets/images/ico_mail.svg"]}
                                     alt="Icone email"
                                 />
                             </button>
@@ -130,7 +130,7 @@ export default function Principal() {
                     <div className="contact">
                         <a href="https://wa.me/5562994721231" target="_blank">
                             <button>
-                                <img src={images["/src/assets/images/ico_telephone.svg"]} alt="Icone telefone" />
+                                <img src={images["../assets/images/ico_telephone.svg"]} alt="Icone telefone" />
                             </button>
                             <p>(62) 99472-1231</p>
                         </a>
@@ -138,7 +138,7 @@ export default function Principal() {
                     <div className="contact">
                         <a href="https://github.com/matheushnunes" target="_blank">
                             <button>
-                                <img src={images["/src/assets/images/logo_gitHub.png"]} alt="Icone gitHub" />
+                                <img src={images["../assets/images/logo_gitHub.png"]} alt="Icone gitHub" />
                             </button>
                             <p>matheushnunes</p>
                         </a>
@@ -146,7 +146,7 @@ export default function Principal() {
                     <div className="contact">
                         <a href="https://www.linkedin.com/in/matheus-henrique-nunes-a4988027a/" target="_blank">
                             <button>
-                                <img src={images["/src/assets/images/ico_linkedin.png"]} alt="Icone linkedin" />
+                                <img src={images["../assets/images/ico_linkedin.png"]} alt="Icone linkedin" />
                             </button>
                             <p>Matheus Henrique Nunes</p>
                         </a>
