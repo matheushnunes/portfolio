@@ -7,8 +7,8 @@ const images = import.meta.glob('../assets/images/**/*.{png,jpg,jpeg,svg}', {
     eager: true,
     import: 'default'
 });
+
 export default function Principal() {
-    console.log(images)
     const [registerElement, visible] = useScrollAnimation(); // Hook personalizado para gerenciar os elementos visíveis na tela e suas respectivas classes de animação
     const sectionAboutMe = useRef(null);
     const sectionContact = useRef(null);
@@ -49,9 +49,13 @@ export default function Principal() {
                         Estudo desenvolvimento de software desde 2021 e, atualmente, curso <strong>Análise e Desenvolvimento de Sistemas</strong>. As tecnologias que mais domino são <strong>JavaScript, HTML e CSS</strong>. Estou atuando como desenvolvedor full-stack em um projeto acadêmico em equipe e estou sempre buscando evoluir como profissional.
                     </p>
                     <div className="buttons-about-me">
-                        <button className="custom-btn btn-2">
-                            <a href="..../assets/files/cv_matheus_henrique.pdf" download={"cv_matheus_henrique.pdf"}><span>Baixar CV</span></a>
-                        </button>
+                        <a
+                            className="custom-btn btn-2"
+                            href="/portfolio/assets/files/cv_matheus_henrique.pdf"
+                            download="cv_matheus_henrique.pdf"
+                        >
+                            <span>Baixar CV</span>
+                        </a>
                         <button className="custom-btn btn-2">
                             <a onClick={(e) => {
                                 e.preventDefault()
