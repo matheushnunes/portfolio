@@ -242,6 +242,7 @@ main section {
     padding: 1.5rem;
     text-align: center;
     max-width: 100rem;
+    padding-bottom: 10rem;
 }
 
 .flex-left {
@@ -333,7 +334,7 @@ h1 {
 
 .btn-scroll {
     position: absolute;
-    bottom: 4rem;
+    bottom: 2rem;
     transform: translateX(-50%);
     transform: translateY(100vh);
     animation: slideUp 1s ease-out forwards, junping 1s infinite;
@@ -371,6 +372,7 @@ h1 {
     .buttons-about-me {
         opacity: 0;
         transform: translateX(50%);
+        overflow: hidden;
     }
 }
 
