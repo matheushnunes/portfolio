@@ -357,13 +357,16 @@ h1 {
     padding-bottom: 0;
     text-align: center;
     height: 100vh;
-    background: linear-gradient(to bottom,
-            #30303000 0%,
-            var(--main-color1) 20%,
-            var(--main-color1) 83%,
-            #30303000 97%);
+    background: linear-gradient(
+        to bottom,
+        #30303000 0%,
+        var(--main-color1) 20%,
+        var(--main-color1) 83%,
+        #30303000 97%
+    );
     transition: opacity 1s ease, transform 1s ease;
-
+    overflow-x: hidden;
+    
     .text-about {
         opacity: 0;
         transform: translateX(-50%);
