@@ -337,12 +337,13 @@ h1 {
     bottom: 2rem;
     transform: translateX(-50%);
     transform: translateY(100vh);
-    animation: slideUp 1s ease-out forwards, junping 1s infinite;
+    animation: arrowSlideUp 1s ease-out forwards, junping 1s infinite;
     animation-delay: 5s, 6s;
+    opacity: 0;
 }
 
 .btn-scroll img {
-    width: 40vw;
+    width: 30vw;
     max-width: 300px;
     transform: rotate(-90deg);
 }
@@ -366,7 +367,7 @@ h1 {
     );
     transition: opacity 1s ease, transform 1s ease;
     overflow-x: hidden;
-    
+
     .text-about {
         opacity: 0;
         transform: translateX(-50%);
@@ -863,7 +864,7 @@ h1 {
         width: 5rem;
     }
 
-    .contact button {
+    .contact div {
         background-color: var(--blue);
         border: none;
         border-radius: 50%;
@@ -872,8 +873,9 @@ h1 {
         transition: .3s;
     }
 
-    .contact button:hover {
-        background-color: var(--blue-1);
+    .contact div:hover {
+        box-shadow: inset 0 0 7px 5px #0b00a1b3;
+        background-color: transparent;
         transition: .3s;
     }
 }
@@ -919,7 +921,6 @@ h1 {
 }
 
 .btn-2 span {
-    position: relative;
     width: 100%;
     height: 100%;
 }

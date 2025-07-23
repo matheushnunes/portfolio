@@ -121,3 +121,9 @@
         gap: 5 rem !important;
     }
 }
+
+@media screen and (max-height: 800px) {
+    .btn-scroll {
+        display: none !important;
+    }
+}

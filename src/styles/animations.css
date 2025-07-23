@@ -51,6 +51,13 @@
     }
 }
 
+@keyframes arrowSlideUp {
+    to {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+}
+
 @keyframes rotate {
     from {
         transform: rotate(-90deg);

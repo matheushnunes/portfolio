@@ -56,14 +56,12 @@ export default function Principal() {
                         >
                             <span>Baixar CV</span>
                         </a>
-                        <button className="custom-btn btn-2">
-                            <a onClick={(e) => {
-                                e.preventDefault()
-                                scrollTo(sectionContact)
-                            }}>
-                                <span>Entre em Contato</span>
-                            </a>
-                        </button>
+                        <a className="custom-btn btn-2" onClick={(e) => {
+                            e.preventDefault()
+                            scrollTo(sectionContact)
+                        }}>
+                            <span>Entre em Contato</span>
+                        </a>
                     </div>
                 </div>
                 <span className="about-background">&lt;/&gt;</span>
@@ -122,36 +120,36 @@ export default function Principal() {
                 <div className="container-contacts">
                     <div className="contact" id="contact-email">
                         <a href="mailto:matheushnunes2005@gmail.com">
-                            <button className="btn-3">
+                            <div>
                                 <img
                                     src={images["../assets/images/ico_mail.svg"]}
                                     alt="Icone email"
                                 />
-                            </button>
+                            </div>
                             <p>matheushnunes2005@gmail.com</p>
                         </a>
                     </div>
                     <div className="contact">
                         <a href="https://wa.me/5562994721231" target="_blank">
-                            <button>
+                            <div>
                                 <img src={images["../assets/images/ico_telephone.svg"]} alt="Icone telefone" />
-                            </button>
+                            </div>
                             <p>(62) 99472-1231</p>
                         </a>
                     </div>
                     <div className="contact">
                         <a href="https://github.com/matheushnunes" target="_blank">
-                            <button>
+                            <div>
                                 <img src={images["../assets/images/logo_gitHub.png"]} alt="Icone gitHub" />
-                            </button>
+                            </div>
                             <p>matheushnunes</p>
                         </a>
                     </div>
                     <div className="contact">
                         <a href="https://www.linkedin.com/in/matheus-henrique-nunes-a4988027a/" target="_blank">
-                            <button>
+                            <div>
                                 <img src={images["../assets/images/ico_linkedin.png"]} alt="Icone linkedin" />
-                            </button>
+                            </div>
                             <p>Matheus Henrique Nunes</p>
                         </a>
                     </div>
