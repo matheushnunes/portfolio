@@ -1,4 +1,6 @@
 import { useRef, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import icoDark from "../assets/images/ico_dark_mode.svg";
 import icoLight from "../assets/images/ico_light_mode.svg";
 import icoMenu from "../assets/images/ico-menu.svg";
@@ -10,6 +12,8 @@ export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const dropdownRef = useRef(null);
     const buttonRef = useRef(null);
+    const scrollTimeout = useRef(null);
+    const navigate = useNavigate();
 
     if (isDarkTheme) root.classList.add("dark-mode")
 
@@ -50,8 +54,28 @@ export default function Header() {
         };
     }, [isMenuOpen]);
 
-    const handleLinkClick = () => {
+    const handleLinkClick = (section) => {
         setIsMenuOpen(false);
+
+        // Se não estiver na tela principal, redireciona para a tela principal
+        if (location.pathname !== "/portfolio") {
+            navigate('/', { state: { scrollTo: section } });
+        }
+
+        // Navega para o elemento clicado no link do menu
+        scrollTimeout.current = setTimeout(() => {
+            const element = document.getElementById(section);
+            element?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }, 100);
+
+        return () => {
+            if (scrollTimeout.current) {
+                clearTimeout(scrollTimeout.current);
+            }
+        };
     }
 
     return (
@@ -82,10 +106,10 @@ export default function Header() {
                 role="menu"
                 aria-orientation="vertical"
             >
-                <a className="links-nav" href="#about-me" onClick={handleLinkClick}>Sobre</a>
-                <a className="links-nav" href="#skills" onClick={handleLinkClick}>Habilidades</a>
-                <a className="links-nav" href="#projects" onClick={handleLinkClick}>Projetos</a>
-                <a className="links-nav" href="#contact" onClick={handleLinkClick}>Contato</a>
+                <a className="links-nav" onClick={() => { handleLinkClick("about-me") }}>Sobre</a>
+                <a className="links-nav" onClick={() => { handleLinkClick("skills") }}>Habilidades</a>
+                <a className="links-nav" onClick={() => { handleLinkClick("projects") }}>Projetos</a>
+                <a className="links-nav" onClick={() => { handleLinkClick("contact") }}>Contato</a>
             </nav>
             <button className={`toggle-theme ${isDarkTheme ? "dark-mode" : "light-mode"}`} onClick={toggleTheme}>
                 <div className="container-ico-theme">

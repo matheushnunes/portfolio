@@ -37,6 +37,7 @@
         cursor: pointer;
         align-self: flex-start;
         font-size: 1.6rem;
+        margin-top: 1rem;
     }
 
     img {
@@ -59,6 +60,7 @@
 
     .info {
         width: 40%;
+        min-width: 300px;
         display: flex;
         flex-direction: column;
         gap: 3rem;
@@ -204,13 +206,18 @@
 
 
     .modal {
+        margin-top: 3rem;
         .popup-image {
             display: flex;
             flex-direction: column;
             width: 90%;
+            max-height: 93vh;
             background-color: var(--main-color-1);
             padding: 1rem;
             gap: 1rem;
+            z-index: 4;
+            border-radius: 5px;
+            padding: 2rem;
         }
 
         .btn-exit-fullscreen {
@@ -219,14 +226,8 @@
             cursor: pointer;
         }
 
-        .popup-image {
-            z-index: 4;
-            border-radius: 5px;
-            padding: 2rem;
-        }
-
         .popup-image img {
-            max-height: 90vh;
+            max-height: 100;
             max-width: 82vw;
             object-fit: contain
         }
@@ -240,6 +241,7 @@
 
         .btn-modal {
             width: 5rem;
+            min-width: 25px;
         }
 
         .btn-modal::after {

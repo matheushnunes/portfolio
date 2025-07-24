@@ -39,6 +39,12 @@
     .menu-hamburguer {
         filter: invert(0);
     }
+    .btn-modal {
+        filter: invert(1);
+    }
+    .btn-exit-fullscreen {
+        filter: invert(1);
+    }
 }
 
 ::-webkit-scrollbar {
@@ -102,7 +108,7 @@ header {
     background-color: var(--main-color-1);
     border-bottom: var(--blue) 4px solid;
     width: 100%;
-    z-index: 6;
+    z-index: 7;
 }
 
 header nav {
@@ -115,6 +121,7 @@ header nav {
 
 nav a {
     transition: .3s;
+    cursor: pointer;
 }
 
 nav a:hover {
@@ -882,7 +889,7 @@ h1 {
 
 .contacts.visible {
     .container-contacts {
-        transition: opacity 1s ease .2s, transform 1s ease .2s;
+        transition: opacity 1s ease .4s, transform 1s ease .4s;
         opacity: 1;
         transform: translateX(0);
     }

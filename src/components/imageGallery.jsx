@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 //importa todas as imagens possíveis
-const allImageModules = import.meta.glob('../assets/images/**/*.{png,jpg,jpeg,svg}', {
+const allImageModules = import.meta.glob('../assets/images/**/*.{png,jpg,jpeg,svg}');
+
+const allImages = import.meta.glob('../assets/images/**/*.{png,jpg,jpeg,svg}', {
     eager: true,
     import: 'default'
-});
+})
 
 const ImageGallery = ({ imageSize, imagePath }) => {
     const [images, setImages] = useState([]);
@@ -14,7 +16,6 @@ const ImageGallery = ({ imageSize, imagePath }) => {
     useEffect(() => {
         const loadImages = async () => {
             try {
-
                 //Filtra apenas as que correspondem ao caminho desejado
                 const filteredPaths = Object.keys(allImageModules).filter(path =>
                     path.includes(`/${imagePath}/${imageSize}/`)
@@ -41,7 +42,6 @@ const ImageGallery = ({ imageSize, imagePath }) => {
 
     if (isLoading) return <div>Carregando imagens...</div>;
     if (images.length === 0) return <div>Nenhuma imagem encontrada em {imagePath}/{imageSize}.</div>;
-    console.log(allImageModules);
 
     return (
         <div className="gallery">
@@ -50,7 +50,7 @@ const ImageGallery = ({ imageSize, imagePath }) => {
                 alt={`Imagem ${currentIndex + 1}`}
             />
             <button className='btn-fullscreen' onClick={() => setIsModalOpen(true)}>
-                <img src={allImageModules[`../assets/images/fullscreen.svg`]}/>
+                <img src={allImages[`../assets/images/fullscreen.svg`]}/>
             </button>
             <div className="controls">
                 <button className='btn-back-image'
@@ -58,21 +58,21 @@ const ImageGallery = ({ imageSize, imagePath }) => {
                         (prev - 1 + images.length) % images.length
                     )}
                 >
-                    <img src={allImageModules[`../assets/images/arrow.svg`]} alt="seta para esquerda" />
+                    <img src={allImages[`../assets/images/arrow.svg`]} alt="seta para esquerda" />
                 </button>
                 <button className='btn-next-image'
                     onClick={() => setCurrentIndex(prev =>
                         (prev + 1) % images.length
                     )}
                 >
-                    <img src={allImageModules[`../assets/images/arrow.svg`]} alt="seta para direita" className='rotate' />
+                    <img src={allImages[`../assets/images/arrow.svg`]} alt="seta para direita" className='rotate' />
                 </button>
             </div>
             {isModalOpen && (
                 <div className="modal">
                     <div className="popup-image">
                         <button onClick={() => {setIsModalOpen(false); console.log(isModalOpen)}} className='btn-exit-fullscreen'>
-                            <img src={allImageModules[`../assets/images/fullscreen_exit.svg`]} alt="" />
+                            <img src={allImages[`../assets/images/fullscreen_exit.svg`]} alt="" />
                         </button>
                         <div className="container-image-and-btns">
                             <button
@@ -81,11 +81,12 @@ const ImageGallery = ({ imageSize, imagePath }) => {
                                     (prev - 1 + images.length) % images.length
                                 )}
                             >
-                                <img src={allImageModules[`../assets/images/arrow.svg`]} alt="seta para esquerda" />
+                                <img src={allImages[`../assets/images/arrow.svg`]} alt="seta para esquerda" />
                             </button>
                             <img
                                 src={images[currentIndex]}
                                 alt={`Imagem ${currentIndex + 1}`}
+                                className='img-modal'
                             />
                             <button
                                 className='btn-next-image btn-modal'
@@ -93,7 +94,7 @@ const ImageGallery = ({ imageSize, imagePath }) => {
                                     (prev + 1) % images.length
                                 )}
                             >
-                                <img src={allImageModules[`../assets/images/arrow.svg`]} alt="seta para direita" className='rotate' />
+                                <img src={allImages[`../assets/images/arrow.svg`]} alt="seta para direita" className='rotate' />
                             </button>
                         </div>
                     </div>
