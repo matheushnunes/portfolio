@@ -16,22 +16,6 @@
 <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    <script>
-        // Recuperação segura da rota
-        const redirectPath = sessionStorage.getItem('redirect');
-        if (redirectPath) {
-            sessionStorage.removeItem('redirect');
-            try {
-                // Verificação adicional para evitar erros
-                if (typeof window.history.replaceState === 'function') {
-                    window.history.replaceState({}, document.title, redirectPath);
-                }
-            } catch (e) {
-                console.error('Redirect error:', e);
-                window.location.href = redirectPath; // Fallback seguro
-            }
-        }
-    </script>
 </body>
 
 </html>
