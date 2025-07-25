@@ -17,6 +17,8 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <script>
+        console.log('SessionStorage:', sessionStorage.getItem('redirect'));
+        console.log('Document title:', document.title);
         // Recuperação segura da rota
         const redirectPath = sessionStorage.getItem('redirect');
         if (redirectPath) {
