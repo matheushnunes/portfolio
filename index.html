@@ -18,11 +18,19 @@
 <body>
     <div id="root"></div>
     <script>
-        // Recupera a rota original após o carregamento
-        if (sessionStorage.redirect) {
-            const redirect = sessionStorage.redirect;
-            delete sessionStorage.redirect;
-            window.history.replaceState({}, document.title, redirect);
+        // Recuperação segura da rota
+        const redirectPath = sessionStorage.getItem('redirect');
+        if (redirectPath) {
+            sessionStorage.removeItem('redirect');
+            try {
+                // Verificação adicional para evitar erros
+                if (typeof window.history.replaceState === 'function') {
+                    window.history.replaceState({}, document.title, redirectPath);
+                }
+            } catch (e) {
+                console.error('Redirect error:', e);
+                window.location.href = redirectPath; // Fallback seguro
+            }
         }
     </script>
 </body>
