@@ -69,7 +69,7 @@ export default function Principal() {
             <section
                 className={`section ${visible['skills'] ? 'visible' : ''}`}
                 id="skills"
-                ref={el => registerElement(el, 0.4)}
+                ref={el => registerElement(el, 0.25)}
             >
                 <h2 className="section-title-h2">Habilidades</h2>
                 <div className="container-skills">
