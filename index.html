@@ -11,28 +11,12 @@
         href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
     <title>Portfólio | Matheus Henrique</title>
-  <script type="module" crossorigin src="/portfolio/assets/index-cToSS7Ii.js"></script>
+  <script type="module" crossorigin src="/portfolio/assets/index-uCAZf321.js"></script>
   <link rel="stylesheet" crossorigin href="/portfolio/assets/index-DsQhE0w8.css">
 </head>
 
 <body>
     <div id="root"></div>
-    <script>
-        // Recuperação segura da rota
-        const redirectPath = sessionStorage.getItem('redirect');
-        if (redirectPath) {
-            sessionStorage.removeItem('redirect');
-            try {
-                // Verificação adicional para evitar erros
-                if (typeof window.history.replaceState === 'function') {
-                    window.history.replaceState({}, document.title, redirectPath);
-                }
-            } catch (e) {
-                console.error('Redirect error:', e);
-                window.location.href = redirectPath; // Fallback seguro
-            }
-        }
-    </script>
 </body>
 
 </html>
