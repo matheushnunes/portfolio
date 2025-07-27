@@ -1,9 +1,13 @@
-# [Matheus Henrique] - Portfólio Profissional
+# Matheus Henrique - Portfólio Profissional
 
-<div align="center">
-  <img src="src/assets/images/portfolio/desktop/tela-inicia-light.png" alt="Screenshot do Portfólio" width="800">
-  <img src="src/assets/images/portfolio/desktop/skills.png" alt="Screenshot do Portfólio" width="800">
-  <img src="src/assets/images/portfolio/desktop/aboutme.png" alt="Screenshot do Portfólio" width="800">
+<div align="center" >
+  <img src="src/assets/images/portfolio/desktop/tela-inicial-light.png" alt="Screenshot do Portfólio" width="700">
+  <img src="src/assets/images/portfolio/desktop/skills.png" alt="Screenshot do Portfólio" width="700">
+  <img src="src/assets/images/portfolio/desktop/aboutme.png" alt="Screenshot do Portfólio" width="700">
+  <div>
+    <img src="src/assets/images/portfolio/mobile/projects-dark.png" alt="Screenshot do Portfólio" width="300">
+    <img src="src/assets/images/portfolio/mobile/projects-details-light.png" alt="Screenshot do Portfólio" width="300">
+  </div>
 </div>
 
 ## ✨ Demonstração
@@ -15,43 +19,21 @@
 
 Portfólio profissional desenvolvido para mostrar meus projetos, habilidades e experiência. O site apresenta:
 
-- Apresentação pessoal e contato
+- Apresentação pessoal
 - Seção de habilidades técnicas
 - Galeria de projetos realizados
-- Histórico profissional
 - Formas de contato
 
 ## 🛠 Tecnologias Utilizadas
 
-### Frontend
-- **React** ⚛️ - Biblioteca JavaScript para construção de interfaces
-- **Styled Components** 💅 - Estilização componentizada
-- **Framer Motion** 🎬 - Animações e interações
-- **React Icons** - Ícones para a aplicação
-
-### Outras Ferramentas
+- **React**  - Biblioteca JavaScript para construção de interfaces
+- **SCSS** - Pré-processador CSS
+- **Figma** - Prototipação
 - **Git** - Controle de versão
-- **Vite** ⚡ - Build tool rápida
-- **ESLint** + **Prettier** - Padronização de código
+- **Vite** - Build tool rápida
 
 ## 🎨 Design e Acessibilidade
 
 - Design responsivo (mobile, tablet, desktop)
 - Modo claro/escuro
 - Totalmente acessível (ARIA, semântica HTML)
-- Performance otimizada (100% no Lighthouse)
-
-## 📂 Estrutura do Projeto
-
-```bash
-├── public/               # Arquivos estáticos
-├── src/
-│   ├── assets/           # Imagens, fonts, etc.
-│   ├── components/       # Componentes reutilizáveis
-│   ├── pages/            # Páginas do portfólio
-│   ├── styles/           # Estilos globais
-│   ├── App.jsx           # Componente principal
-│   └── main.jsx          # Ponto de entrada
-├── .gitignore
-├── package.json
-└── README.md
