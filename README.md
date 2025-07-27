@@ -13,7 +13,7 @@
 ## ✨ Demonstração
 
 [🔗 Acesse o portfólio online](https://matheushnunes.github.io/portfolio)  
-[🎥 Veja um vídeo demonstrativo](link-para-video)
+[🎥 Veja um vídeo demonstrativo](https://youtu.be/6kScLAQ3_A0)
 
 ## 🚀 Sobre o Projeto
 
