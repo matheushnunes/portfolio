@@ -1,4 +1,5 @@
 import Header from './header.jsx';
+import Footer from './footer.jsx';
 import { Outlet } from 'react-router-dom';
 import { useRef } from 'react';
 import { ScrollContext } from '../hooks/SrollContext.jsx';
@@ -33,6 +34,7 @@ export default function Layout() {
                 goToSectionContact={() => scrollTo(sectionContact)}
             />
             <Outlet /> {/* Aqui as rotas filhas serão renderizadas */}
+            <Footer />
         </ScrollContext.Provider>
     );
 }
