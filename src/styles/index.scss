@@ -571,6 +571,48 @@ h1 {
         transform: translateX(0);
     }
 
+    .skill:nth-of-type(15) {
+        transition: opacity 1s ease 4.2s, transform 1s ease 4.2s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(16) {
+        transition: opacity 1s ease 4.5s, transform 1s ease 4.5s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(17) {
+        transition: opacity 1s ease 4.8s, transform 1s ease 4.8s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(18) {
+        transition: opacity 1s ease 5.1s, transform 1s ease 5.1s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(19) {
+        transition: opacity 1s ease 5.4s, transform 1s ease 5.4s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(20) {
+        transition: opacity 1s ease 5.7s, transform 1s ease 5.7s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .skill:nth-of-type(21) {
+        transition: opacity 1s ease 6s, transform 1s ease 6s;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
 }
 
 /* CSS Atualizado */
@@ -650,33 +692,58 @@ h1 {
 }
 
 #donut-html-5 {
-    background: conic-gradient(#0b00a1c7 0% 70%,
-            var(--main-color1)70% 100%);
+    background: conic-gradient(#0b00a1c7 0% 75%,
+            var(--main-color1)75% 100%);
 }
 
 #donut-css-3 {
+    background: conic-gradient(#0b00a1c7 0% 55%,
+            var(--main-color1) 55% 100%);
+}
+
+#donut-javascript {
+    background: conic-gradient(#0b00a1c7 0% 55%,
+            var(--main-color1) 55% 100%);
+}
+
+#donut-typescript {
     background: conic-gradient(#0b00a1c7 0% 50%,
             var(--main-color1) 50% 100%);
 }
 
-#donut-javascript {
+#donut-angular {
+    background: conic-gradient(#0b00a1c7 0% 50%,
+            var(--main-color1) 50% 100%);
+}
+
+#donut-tailwind-css{
     background: conic-gradient(#0b00a1c7 0% 50%,
             var(--main-color1) 50% 100%);
 }
 
 #donut-github {
-    background: conic-gradient(#0b00a1c7 0% 45%,
-            var(--main-color1) 45% 100%);
+    background: conic-gradient(#0b00a1c7 0% 50%,
+            var(--main-color1) 50% 100%);
 }
 
 #donut-git {
-    background: conic-gradient(#0b00a1c7 0% 40%,
-            var(--main-color1) 40% 100%);
+    background: conic-gradient(#0b00a1c7 0% 50%,
+            var(--main-color1) 50% 100%);
 }
 
 #donut-inglês {
-    background: conic-gradient(#0b00a1c7 0% 40%,
-            var(--main-color1) 40% 100%);
+    background: conic-gradient(#0b00a1c7 0% 48%,
+            var(--main-color1) 48% 100%);
+}
+
+#donut-node-js {
+    background: conic-gradient(#0b00a1c7 0% 48%,
+            var(--main-color1) 48% 100%);
+}
+
+#donut-mongodb {
+    background: conic-gradient(#0b00a1c7 0% 43%,
+            var(--main-color1) 43% 100%);
 }
 
 #donut-scrum {
@@ -690,11 +757,6 @@ h1 {
 }
 
 #donut-figma {
-    background: conic-gradient(#0b00a1c7 0% 33%,
-            var(--main-color1) 33% 100%);
-}
-
-#donut-nodejs {
     background: conic-gradient(#0b00a1c7 0% 33%,
             var(--main-color1) 33% 100%);
 }
