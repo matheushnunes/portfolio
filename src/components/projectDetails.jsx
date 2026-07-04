@@ -36,12 +36,25 @@ export default function ProjectDetails () {
                             {projectData.technologies.map((technology, index) => <li key={index}>{technology}</li>)}
                         </ul>
                         <div className="container-space-between margin-top-auto">
-                            <button className="custom-btn btn-2">
-                                <a href={projectData.projectLink} target="_blank" rel="external"><span>Acessar Projeto</span></a>
-                            </button>
-                            <button className="custom-btn btn-2">
-                                <a href={projectData.repoLink} target="_blank" rel="external"><span>Ver repositorio</span></a>
-                            </button>
+                            { projectData.projectLink ?
+                                <button className="custom-btn btn-2" >
+                                    <a href={projectData.projectLink} target="_blank" rel="external"><span>Acessar Projeto</span></a>
+                                </button>
+                                :
+                                <button className="custom-btn btn-2 disabled" title="Projeto privado">
+                                    <span>Acessar Projeto</span>
+                                </button>
+                            }
+
+                            { projectData.repoLink ?
+                                <button className="custom-btn btn-2">
+                                    <a href={projectData.repoLink} target="_blank" rel="external"><span>Ver repositório</span></a>
+                                </button>
+                                :
+                                <button className="custom-btn btn-2 disabled" title="Repositório privado">
+                                    <span>Ver repositório</span>
+                                </button>
+                            }
                         </div>
                     </div>
                 </div>

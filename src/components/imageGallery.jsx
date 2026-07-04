@@ -9,7 +9,7 @@ const allImages = import.meta.glob('../assets/images/**/*.{png,jpg,jpeg,svg}', {
 
 const ImageGallery = ({ imageSize, imagePath }) => {
     const [images, setImages] = useState([]);
-    const [currentIndex, setCurrentIndex] = useState(1);
+    const [currentIndex, setCurrentIndex] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -37,8 +37,14 @@ const ImageGallery = ({ imageSize, imagePath }) => {
             }
         };
 
+        if (images.length > 1) {
+            setCurrentIndex(1)
+        }
+
         loadImages();
     }, [imagePath, imageSize]);
+
+
 
     if (isLoading) return <div>Carregando imagens...</div>;
     if (images.length === 0) return <div>Nenhuma imagem encontrada em {imagePath}/{imageSize}.</div>;

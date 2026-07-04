@@ -987,6 +987,11 @@ footer {
 }
 
 /* Botão customizado */
+
+.custom-btn.disabled {
+    opacity: 0.5 !important;
+}
+
 .custom-btn {
     max-width: 20rem;
     width: 100%;
