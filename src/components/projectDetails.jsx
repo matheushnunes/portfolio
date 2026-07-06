@@ -35,6 +35,11 @@ export default function ProjectDetails () {
                         <ul className="technologies-list">
                             {projectData.technologies.map((technology, index) => <li key={index}>{technology}</li>)}
                         </ul>
+                        {!projectData.projectLink &&
+                            <div className="alert-confidential">
+                                <p>⚠️ Imagens desfocadas para proteger a confidencialidade dos dados do cliente</p>
+                            </div>
+                        }
                         <div className="container-space-between margin-top-auto">
                             { projectData.projectLink ?
                                 <button className="custom-btn btn-2" >

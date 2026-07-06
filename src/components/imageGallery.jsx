@@ -47,7 +47,7 @@ const ImageGallery = ({ imageSize, imagePath }) => {
 
 
     if (isLoading) return <div>Carregando imagens...</div>;
-    if (images.length === 0) return <div>Nenhuma imagem encontrada em {imagePath}/{imageSize}.</div>;
+    if (images.length === 0) return <div></div>;
 
     return (
         <div className="gallery">

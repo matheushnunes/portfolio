@@ -60,10 +60,23 @@
     border-radius: 10px;
 }
 
+#root {
+    height: 100vh;
+}
+
 body {
     background-color: var(--main-color);
     color: var(--text-color);
     font: normal 1.6rem arial;
+    display: flex;
+    min-height: 100vh;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
 }
 
 .rotate {
@@ -223,6 +236,9 @@ input:checked+label:after {
 
 main {
     margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 main section {
@@ -964,6 +980,9 @@ footer {
     padding: 1rem;
     background-color: var(--background-color);
     border-top: 4px solid var(--blue);
+    width: 100%;
+    margin-top: auto;
+    flex-shrink: 0;
     img {
         width: 1.5rem;
         margin: 0 .5rem 0 1rem;

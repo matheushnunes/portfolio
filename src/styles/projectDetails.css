@@ -204,6 +204,21 @@
         max-width: 40rem;
     }
 
+    .alert-confidential {
+        width: 100%;
+        padding: 1.5rem;
+        background-color: rgba(161, 142, 0, 0.15);
+        border-left: 4px solid var(--yellow);
+        border-radius: 5px;
+        margin: 2rem 0;
+    }
+
+    .alert-confidential p {
+        color: var(--yellow);
+        font-size: 1.5rem;
+        margin: 0;
+        font-weight: 500;
+    }
 
     .modal {
         margin-top: 3rem;
