@@ -13,6 +13,8 @@ const ImageGallery = ({ imageSize, imagePath }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    const closeModal = () => setIsModalOpen(false);
+
     useEffect(() => {
         const loadImages = async () => {
             try {
@@ -75,9 +77,9 @@ const ImageGallery = ({ imageSize, imagePath }) => {
                 </button>
             </div>
             {isModalOpen && (
-                <div className="modal">
-                    <div className="popup-image">
-                        <button onClick={() => {setIsModalOpen(false); console.log(isModalOpen)}} className='btn-exit-fullscreen'>
+                <div className="modal" onClick={closeModal}>
+                    <div className="popup-image" onClick={(e) => e.stopPropagation()}>
+                        <button onClick={closeModal} className='btn-exit-fullscreen'>
                             <img src={allImages[`../assets/images/fullscreen_exit.svg`]} alt="" />
                         </button>
                         <div className="container-image-and-btns">

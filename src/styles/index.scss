@@ -176,11 +176,21 @@ input[type="checkbox"] {
     .btn-scroll img {
         filter: brightness(.9);
     }
+    .ico-theme {
+        filter: invert(1);
+        transition: 0.5s;
+    }
+
+    .skill {
+        img {
+            filter: invert(0.8);
+        }
+    }
 }
 
 .dark-mode {
     #ico-theme-light {
-        opacity: 0.3;
+        opacity: 0.5;
     }
     .btn-menu-hamburgu {
         filter: invert(1);
@@ -208,7 +218,6 @@ input[type="checkbox"] {
     position: relative;
     width: 18px;
     z-index: 2;
-    filter: invert(1);
 }
 
 .label-toggle-switch {
